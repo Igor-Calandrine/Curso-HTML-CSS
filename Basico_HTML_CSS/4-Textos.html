@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {font-size: 16px;}
+        p {font-size: 1.3em; margin-left: 50px;}
+        .exemplo {font-size: 1.75em; font-weight: 500;margin-left: 25px; background-color: rgb(213, 211, 208);}        
+    </style>
+    <title>Textos</title>
+</head>
+<body>
+
+<!--
+CSS Alinhamento horizontal
+    O text-align é uma propriedade para definir o alinhamento horizontal de um texto. Assim como é conhecido no word, nós temos os seguintes valores.-->
+
+    <h1 class="exemplo">Exemplo - text-align</h1>
+    <style>
+        #left {text-align: left;}
+        #right {text-align: right;}
+        #center {text-align: center;}
+        #justify {text-align: justify;}
+    </style>
+
+    <p id="left">Texto alinhado a esquerda</p>
+    <p id="right">Texto alinhado a direita</p>
+    <p id="center">Texto centralizado</p>
+    <p id="justify">Texto justificado, Texto justificado, Texto justificado, Texto justificado, Texto justificado</p>
+
+    <!--Será interessante mudar a largura da tela para ter uma melhor vizualização.-->
+
+<!-- 
+CSS Alinhamento Vertical
+    O vertical-align é uma propriedade que define o alinhamento vertical de um elemento, ela pode ter muitos valores, mas veremos apenas as que considero mais importantes. Os elementos irão se alinhar de acordo com o seu elemento pai, que no caso estaremos usando uma tag <p>.
+        
+        baseline- Valor padrão. O elemento é alinhado com a linha de base do pai
+        text-top- O elemento está alinhado com a parte superior da fonte do elemento pai
+        middle- O elemento é colocado no meio do elemento pai
+        text-bottom- O elemento está alinhado com a parte inferior da fonte do elemento pai-->
+    
+    <h1 class="exemplo">Exemplo - vertical-align</h1>
+    <style>
+        .ex2 {font-size: 1.5em;}
+        .vertical {font-size: 0.5em;}
+        #baseline {vertical-align: baseline;}
+        #tex-top {vertical-align: text-top;}
+        #middle {vertical-align: middle;}
+        #text-bottom {vertical-align: text-bottom ;}
+    </style>
+
+    <p class="ex2">Texto elemento pai <span class="vertical" id="baseline">baseline</span></p>
+    <p class="ex2">Texto elemento pai <span class="vertical" id="tex-top">text-top</span></p>
+    <p class="ex2">Texto elemento pai <span class="vertical" id="middle">middle</span></p>
+    <p class="ex2">Texto elemento pai <span class="vertical" id="text-bottom">text-bottom</span></p>
+
+<!--
+CSS Decoração de Textos
+    Na verdade essa propriedade é uma abrevisção para outras proripedade individuais, ela é utilizada para controlar a aparência de linhas decorativas no texto. É importante lembrar que um link já vem com um sublinhado e muitas vezes você terá que alterar isso.
+    
+    *text-decoration-line
+    É uma proriedade que define o tipo de linha de decoração adicionada ao texto
+    
+    none- Valor padrão. Não exibe linha de decoração, você vai utilizar muito para tirar o sublinhado de um link
+    underline- A linha de decoração é exibidos sob o texto, padrão de links.
+    overline- A linha de decoração é exibido sobre o texto
+    line-through- A linha de decoração é exibido através do texto
+
+    *text-decoration-color
+    Você pode dar uma cor também a essas linhas.
+
+    *text-decoration-thickness
+    Aqui também é possível especificar sua espessura
+-->
+    <h1 class="exemplo">Exemplo - vertical-align</h1>
+
+    <style>
+        #none {text-decoration: none;}
+        #underline {text-decoration: underline; text-decoration-color:rgb(143, 2, 131)}
+        #overline {text-decoration: overline; text-decoration-thickness: 5px;}
+        #line-throught {text-decoration: line-through; text-decoration-thickness: 8px; text-decoration-color: red;}
+        #link_dec {text-decoration: none; color: inherit;}
+    </style>
+
+    <p id="none">text-decoration</p>
+    <p id="underline">text-decoration</p>
+    <p id="overline">text-decoration</p>
+    <p id="line-throught">text-decoration</p>
+    <p><a id="link_dec" href="\">Um link para retirar o sublinhadoe sua cor</a></p>
+
+<!--CSS Transformação de textos
+    Podemos controlar os elementos do texto pelo text-transform, transforma letras em maiúsculas e minúsculas, ou capitalizar a primeira letra de cada palavra, sem alterar o conteúdo original do HTML. Temos aqui os seguintes valores:
+    
+    none- Sem transformação
+    capitalize- Transforma o primeiro caractere de cada palavra para maiúsculas
+    uppercase- Transforma todos os caracteres para maiúsculas
+    lowercase- Transforma todos os caracteres para minúsculos
+
+    É importante conhecer esse conceito porque ele é usado em diversar linguagens.-->
+
+    <h1 class="exemplo">Exemplo - text-transform</h1>
+    <style>
+        #tnone {text-transform: none;}
+        #tcapitalize {text-transform: capitalize;}
+        #tuppercase {text-transform: uppercase;}
+        #lowercase {text-transform: lowercase;}
+    </style>
+
+    <p id="tnone">um tExT dE eXemplo para visuAlizAr</p>
+    <p id="tcapitalize">um tExT dE eXemplo para visuAlizAr</p>
+    <p id="tuppercase">um tExT dE eXemplo para visuAlizAr</p>
+    <p id="lowercase">um tExT dE eXemplo para visuAlizAr</p>
+
+<!-- 
+CSS Espaçamento de texto
+    Há várias propriedade para controlar o espaçament de texto, veremos aqui as mais importantes.
+    
+    *text-indent - é um propriedade para especificar o recuo da primeira linhas em um bloco de texto, ela é muito importante pois em outras palavras é conhecida como o parágrafo.
+    
+    *letter-spacing - é uma propriedade usada para especificar o espaço entre os caracteres em um texto, ela é muito utilizada para estilizar informações em um HTML. é importante saber também que valores negativos também podem ser usados.
+    
+    *line-height - é uma proriedade usada para especificar o espaço entre as linhas
+    
+    *word-spacing - é uma proriedade para especificar o espaço entre as palavras de um texto, assim como pode ser feito no word, valores negativos tabém são permitidos--->
+
+    <h1 class="exemplo">Exemplo - Espaçamento de texto</h1>
+    <style>
+        #espac1 {text-indent: 50px;}
+        #espac2 {letter-spacing: 5px;}
+        #espac3 {line-height: 8px;}
+        #espac4 {word-spacing: 15px;}
+    </style>
+
+    <p id="espac1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis incidunt nam esse odio ipsa.</p>
+    <p id="espac2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis incidunt nam esse odio ipsa.</p>
+    <p id="espac3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis incidunt nam esse odio ipsa. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, debitis exercitationem corrupti, ex in minima recusandae blanditiis earum dicta laudantium, maxime ab excepturi fugiat laboriosam quos ut obcaecati aut dignissimos. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta earum quod dolores labore assumenda optio nam molestiae repudiandae inventore pariatur quos reiciendis obcaecati vero perferendis dolor distinctio expedita, fugit nihil.</p>
+    <p id="espac4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis incidunt nam esse odio ipsa.</p>
+
+<!--
+CSS Texto e Sombra
+    O text-shadow é uma propriedade muito importante, mas deve-se usar sem exageros. Ela vai dar uma sensação de profundidade e deixar o texto bem mais estiloso.
+    Para adicionar será necessário saber a ordem de valores
+    
+    text-shadow: horizontal vertical desfoque cor-->
+
+    <h1 class="exemplo">Exemplo - Espaçamento de texto</h1>
+    <style>
+        .exshad {font-size: 2em;}
+        #somb1 {text-shadow: 2px 5px 3px red;}
+        #somb2 {color: rgb(252, 252, 244); text-shadow: 1px 1px 4px rgb(110, 111, 98);}
+        #somb3 {text-shadow: 2px 2px 2px rgb(11, 12, 107);}
+        #somb4 {text-shadow: 2px 2px 8px rgb(11, 12, 107);}
+        #somb5 {text-shadow: 1px 1px 2px rgb(3, 3, 118);}
+    </style>
+
+    <p class="exshad" id="somb1">Sombra 1</p>
+    <p class="exshad" id="somb2">Sombra 2</p>
+    <p class="exshad" id="somb3">Sombra 3</p>
+    <p class="exshad" id="somb4">Sombra 4</p>
+    <p class="exshad" id="somb5">Sombra 5</p>
+    
+
+    
+
+    
+
+
+    
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Displays - inline, block, inline-block</title>
+</head>
+<body>
+<!--
+Display e definição
+    A propiedade #diaplay do CSS define como um elemento é exibido na página, ou seja o comportamento estrutural dele no fluxo do documento. Ele controla como o navegador deve posicionar, alinhar e ocupar o espaço do elemento em realação aos outros.
+    
+Display: block
+    Um elemento display: block é um bloco completo na página. Ele sempre começa em uma nova linha e ocupa a largura disponível (por padrão).
+    Ex:-->
+    <style>
+        .block1 {
+            background-color: rgb(232, 56, 56);
+        }
+    </style>
+
+    <h1 class="block1">Um título</h1>
+    <p class="block1">Um parágrafo</p>
+    <div class="block1">Conteúdo da DIV</div>
+
+    <!--
+    Um elemento display:block pode ter novas definições como:
+        *largura: width
+        *altura: height
+        *margem: margin
+        *preenchimento: padding
+        *borda: border
+        *boreder-radius: arredondar o canto-->
+    
+    <style>
+        .block2 {
+            background-color: rgb(98, 98, 252);
+            width: 50%;
+            height: auto;
+            margin: 40px 25%;
+            padding: 30px;
+            border: 5px solid black;
+            border-radius: 10px;
+        }
+    </style>
+
+    <h1 class="block2">Um título</h1>
+    <p class="block2">Um parágrafo</p>
+    <div class="block2">Conteúdo da DIV</div>
+
+<!-- 
+Display: inline
+    Um elemento com #display:inline é exibido na mesma linha que outros, como parte do texto. Ela não quebra a linha e ocupa apneas o espaço ncessário ao seu conteúdo.
+    Esse elemento não sofre alteração na sua largura (width) e altura (height), aceita margens e paddings porém elas podem colapsar uma com a outra.
+
+    Ex:-->
+
+    <style>
+        .inline1 {
+            background-color: rgb(171, 171, 232);
+            width: 80px;
+            height: 80px;
+            margin-top: 10px;
+            margin-left: 30px;
+            padding: 50px;
+            border: 5px solid black;
+            border-radius: 15px;
+            
+        }
+    </style>
+
+    <a class="inline1" href="/">Um link</a>
+    <span class="inline1">palavra em destaque</span>
+    <img class="inline1" src="../Imagens/Outono 1.jpg" alt="">
+
+<!-- A imagem sofre interferência de width e height, assim que se dá o controle de seu tamanho e veremos profundamente como trabalhar com ela mais adiante. -->
+
+<!-- 
+Display: inline-block
+    Um elemento #display: inline-block se comporta como um inline )ficando lado a loado com outros), mas aceita largura e altura personalizadas como um block. Assim podemos permirtir que a largura (width) e altura (height) poderão ser personalizadas. É muito usado para botões, menus, cards pequenos e ícones alinhados-->
+
+    <style>
+        .inline-block {
+            display: inline-block;
+            background-color: rgb(244, 237, 110);
+            width: 150px;
+            height: auto;
+            padding: 20px;
+            margin: 150px 15px;
+            border: 6px solid black;
+            border-radius: 50px;
+        }
+    </style>
+
+    <br>
+    <h1 class="inline-block">Um título</h1>
+    <p class="inline-block">Um parágrafo</p>
+    <div class="inline-block">Conteúdo da DIV</div>
+    <a class="inline-block" href="/">Um link</a>
+    <span class="inline-block">palavra em destaque</span>
+    
+</body>
+</html>

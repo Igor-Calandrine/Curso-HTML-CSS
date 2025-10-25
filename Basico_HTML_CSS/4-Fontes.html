@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fontes</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <style>
+        body {font-size: 16px;}
+        p {font-size: 1.3em; margin-left: 50px;}
+        .exemplo {font-size: 1.75em; font-weight: 500;margin-left: 25px;}
+    </style>
+</head>
+<body>
+
+<!-- 
+Seleção de fontes
+    Primeiro devemos conhecer 5 tipos de fontes genéricas:
+        Fontes Serif - criam uma sensação de formalidade elegância
+        Fontes Sans-Serif - são mais limpas e dão um visual moderno e minimalista
+        Fontes monoespaciais - todas as letras têm a mesma largura fixa, eles criam um olhar mecânico
+        Fontes cursivas - imitam a caligrafia humana
+        Fontes fantasia - são fontes decorativas -->
+
+    <h1 class="exemplo">Exemplo - font-style</h1>
+    <style>
+        #serif {font-family: 'Times New Roman', Times, serif;}
+        #sansSerif {font-family: Arial, Helvetica, sans-serif;}
+        #mono{font-family: 'Courier New', Courier, monospace;}
+    </style>
+
+    <p id="serif">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+    <p id="sansSerif">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+    <p id="mono">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+
+<!--É imporante notar que sempre há mais de uma fonte na seleção, isso ocorre para que caso uma fonte não esteja disponível a proóxima será usada. -->
+
+<!-- 
+CSS Fonte Style
+    O font-style é uma propriedade específica para o estilo da fonte de um texto, assim como praticamente todos já usaram em um documento de word, vejamos os seguines valores.
+        normal - O texto é mostrado normalmente
+        italic - O texto é mostrado em itálico
+        oblique - O texto é "inclinado" semelhante ai itálico -->
+
+        <h1 class="exemplo">Exemplo - font-style</h1>
+        <style>
+            #normal {font-style: normal;}
+            #italic {font-style: italic;}
+            #oblique {font-style: oblique;}
+        </style>
+
+        <p id="normal">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        <p id="italic">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        <p id="oblique">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+
+<!-- 
+CSS Fonte Weight 
+    O font-weight é uma propriedade que especifica o peso dos caracteres, ou seja, o quanto eles são grossos ou finos no texto, vejamos os seguintes valores
+        lighter - Define caracteres mais leves
+        normal - O texto é mostrado normalmente
+        bold - Define caracteres grossos
+        bolder - Define caracteres muuito grossos
+        100 a 900 - Define em números o quanto os caracteres podem ser grosso, sendo 400 o mesmo que normal.-->
+
+        <style>
+            #lighter {font-weight: lighter;}
+            #normal {font-weight: normal;}
+            #bold {font-weight: bold;}
+            #bolder {font-weight: bolder;}
+            #escala {font-weight: 100;}
+        </style>
+
+        <h1 class="exemplo">Exemplo - font-weight</h1>
+        <p id="lighter">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        <p id="normal">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        <p id="bold">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        <p id="bolder">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        <p id="escala">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+
+<!-- 
+CSS Font Size 
+    O font-size é uma propriedade é usado para especificar o tamanho da fonte no seu documento, é muito importante para o web design. Mesmo podendo alterar o tamnho de suas fontes pe importante que você contiune usado adequandamente suas tags, como os título <h1> até <h6> e parágrafos com <p>.
+    
+    Tamnhos absolutos:
+        px: oferece o controle fixo e preciso sobre o tamanho da fonte
+    
+    Tamanhos relativos:
+        em: Uma unidade relativa ao tamanho da fonte do elemento. Então, se o elemento pai tem um tamanho de fonte de 16px, então 2em resultaria em 32px.
+        
+        rem: Relativa ao tamanho da fonte e do elemento HTML na tela. Isso faz rem muito útil para criar um HTML escalável e responsivo em seus projetos. Ao alterar o tamanho do elemento <html>, todos os elementos dimensionados com rem serão dimensionados proporcionalmente ao longo de toda a página.
+        
+        %: Esta unidade é relativa ao tamanho da fonte do elemento pai.
+        
+        vw: Esta unidade pode ser definida como uma unidade que significa a "largura da janela", ela representa 1% da largura atual da janela de visualização do navegador. 
+
+        É importante observar que no ínicio foi definido no body o fonte-size em 16px
+        Experimente redimensionar a janela para a diferença entre os exemplos abaixo-->
+
+        <style>
+            #px {font-size: 30px;}
+            #em {font-size: 1.5em;}
+            #rem {font-size: 1.75rem;}
+            #porcent {font-size: 150%;}
+            #vw {font-size: 1.5vw;}
+        </style>
+
+        <h1 class="exemplo">Exemplo - font-size</h1>
+        <p id="px">Um texto escrito com tamanho em px</p>
+        <p id="em">Um texto escrito com tamanho em em</p>
+        <p id="rem">Um texto escrito com tamanho rem</p>
+        <p id="porcent">Um texto escrito com tamanho em %</p>
+        <p id="vw">Um texto escrito com tamanho em vw</p>
+
+<!-- 
+CSS Google Fonts 
+    É possível utilizar diversar fontes através do Google Fontes, para isso será necessário adicionar um linkde folha de estilo especial na seção <head> e en seguida consulte a fonte no CSS.
+    Esse exemplo foi adicionado ao top deste conteúto para podermos visualizar a fonte.
+        
+    <head>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+        <style>
+            body {font-family: "Sofia", sans-serif;}
+        </style>
+    </head>
+    -->
+
+    <style>
+        #google_font {font-family: "Sofia", sans-serif;}
+    </style>
+
+    <h1 class="exemplo">Exemplo - Google Fontes</h1>
+    <p id="google_font">Um exemplo de fonte retirada do Google Fontes</p>
+
+<!--
+CSS Import url()
+    Embora o método com <link> no HTML funcione bem e é o mais recomendado, também gostaria de informar que é possível trazer a fonte diretamente no arquivo CSS com @import, porém pode deixar o carregamento do site um pouco mais lento.  
+
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap')
+
+CSS Font off-line
+    Se você quiser baixar uma fonte para utilizar off-line também é possível. Primeiro baixe a fonte e coloque em um local que seja de fácil acesso, de preferência um local próximo a seu HTML, por exemplo uma subpasta.
+    No início do arquivo style.css, adicione:
+
+    @font-face {
+    font-family: 'Roboto'; /* Nome que você escolhe para a fonte */
+    src: url('fontes/Roboto-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    }
+
+    *format('truetype') - É um formato criado pela Apple e Microsoft. Muito usada e amplamente compatível.
+    Há outros formatos, mas não é interessante passar em nosso curso.
+
+    Dentro do próprio Google Fontes há instruções para utlizá-las, sempre que quiser você pode ler para facilitar o sua vida.
+-->
+    
+
+    
+</body>
+</html>

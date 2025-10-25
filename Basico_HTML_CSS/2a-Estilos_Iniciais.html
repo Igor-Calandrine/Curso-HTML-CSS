@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estilos Iniciais</title>
+</head>
+<body>
+
+<!--
+Introdução
+    Veremos agora o estilos iniciais que podem ser aplicados agora em nossos estudos já para o estudante ir se familiarizando. Também devemos antes de tudo conhecer o que são class e id, eles serão utilizados de forma didática para dar exemplos nos nossos estudos.
+
+class e id
+    No HTML, tanto class quanto id são atributos usados para identificar e selecionar elementos da página, geralmente para aplicar estilos no CSS ou manipular com JavaScript.
+    A diferença principal entre eles é quantas vezes podem ser usados e para que servem:
+    
+    class - é um nome genérico e repetível, usado quando queremos aplicar o mesmo estilo a vários elementos.
+    Ex:-->
+        <p class="Ex1">Texto da classe 1</p>
+        <p class="Ex1">Texto da classe 1</p>
+        <p class="Ex1-2">Texto da classe 2</p>
+
+    <!--Para acessarmos a classe no CSS devemos utilizar o ponto #. antes da classe:
+    Observe que no exemplo abaixo foi preciso apenas utilizar a classe uma vez para dar estilo aos dois parágrafos da mesma classe.
+    Ex:-->
+        <style>
+            .Ex1 {
+                color: brown;
+            }
+            .Ex1-2 {
+                color: darkblue;
+            }
+        </style>
+<!--     
+    id - é um nome único, usado para identificar um elemento específico da página, ou seja, cada id só pode ser usado uma vez, pois essa função é distinguir um único item dos demais.
+    Ex:-->
+        <h3 id="Ex2-1">Título 1</h3>
+        <h3 id="Ex2-2">Título 2</h3>
+        <h3 id="Ex2-3">Título 3</h3>
+    
+    <!--Para acessarmos o id no CSS devemos utilizar o # (jogo da velha) antes do id:
+    Ex:-->
+        <style>
+            #Ex2-1 {
+                color: cadetblue;
+            }
+            #Ex2-2 {
+                color: blue;
+            }
+            #Ex2-3 {
+                color: blueviolet;
+            }
+        </style>
+
+<!--
+Diferentes formas de estuturar os seletores
+    Há outras formas também de estrutrar os seletores que podem ser bem úteis mesmo no início dos estudos.
+    Podemos utilizar uma relação hirárquia, ou seja, se quisermos selecionar apenas um elemento dentro de outro. Observe que no exemplo abaixo apenas o parágrafo que esta dentro da div recebeu o estilo.
+    Ex:-->
+        <style>
+            div p {
+                color: cadetblue;
+            }
+        </style>
+
+        <p>Temos aqui um parágrado fora de uma div</p>
+        <div>
+            <p>Temos aqui um parágrafo dentro de uma div</p>
+        </div>
+
+    <!--Podemos também selecionar várias tags de uma vez, ou seja, por agrupamento. Basta colocar uma vírgula que os separará no seletor.
+    Ex:  -->
+        
+    <style>
+        h4, h5, h6 {
+            color: darkgreen;
+        } 
+    </style>
+
+    <h4>Título h4</h4>
+    <h5>Título h5</h5>
+    <h6>Título h6</h6>
+    
+<!--Agora que já vimos o básico, já podemos trabalhar com alguma propriedades.
+
+color
+    A propriedade color, como já vimos nos exemplos acima, define a cor do texto dentro de uma elemento HTML.
+    Pode-se usar cores de várias formas:
+        nome direto: red, blue, green
+        hexadecimal: #ff0000 (vermelho)
+        RGB: rgb(255, 0, 0)
+        RGBA (transparência): rgba(0, 0, 255, 0.5)
+  -->
+    <style>
+        #colorEx {
+            color: coral;
+        }
+    </style>
+    
+    <p id="colorEx">Elemento textual</p>
+
+<!--
+background
+    A prorpiedade background controla o fundo do elemento, pode definar a cor, imagem, podição e repetição. Podemos utilizar apenas background para definir uma cor, ou podemos deixar mais claro no código utilizando background-color. Mais adiante vamos aprofundar mais em background.
+    Ex:-->
+
+    <style>
+        #background1 {
+            background-color: aqua;
+        }
+    </style>
+    <h1 id="background1">Titulo para background</h1>
+
+<!-- 
+border
+    Apropriedade border define a borda que contorna o elemento, ela combina espessura, tipo e cor. -->
+    <style>
+        #border1 {
+            border: 5px solid black;
+        }
+    </style>
+    
+    <p id="border1">Parágrafo para aplicar uma borda</p>
+
+    <!-- Existem várias formas de selcionar vários tipos de bordas, mas quando for necessário utilizar alguma diferente o estudante deve consultar na internet as existentes para aplicar em seu projeto. 
+    Podemos também selecionar qual parte do container queremos aplicar a borda, assim como na maioria das propriedades no CSS.
+        border-top
+        border-right
+        border-bottom
+        border-left
+
+box-shadow
+    A propriedade cria uma sombra de um elemento, serve para da a sensação de profundidade. Será escrita da seguinte forma:
+
+        box-shadow: deslocamentoX deslocamentoY desfoque cor;
+    -->
+        <style>
+            #box-shadow1 {
+                background: rgb(225, 125, 125);
+                box-shadow: 3px 4px gray;
+            }
+        </style>
+
+        <p id="box-shadow1">Exemplo de box-shadow <br> <br></p>
+
+<!--
+border-radius
+    Apropriedade border-radius serve para rredondar os cantos das bordas, deixando um visual mais bonito para o leitor.   -->
+    <style>
+        #border-radius1 {
+            background-color: chocolate;
+            border-radius: 10px;
+        }
+    </style>
+    <p id="border-radius1">Exemplo de uma borda arredondada <br> <br> <br></p>
+
+</body>
+</html>

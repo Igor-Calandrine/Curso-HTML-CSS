@@ -1,0 +1,80 @@
+<!-- 
+Introdução ao CSS
+    CSS (Cascading Style Sheets) significa Folha de  Estilos em Cascata
+    Ela é uma linguagem de estilo usada para controlar a aparência visual de documentos HTML.
+    
+Estrutura
+    A estrutura do CSS define como o código é organizado para que o navegador consiga entender quais elementos devem ser estilizados e como.
+    Observe o exemplo abaixo
+    Ex:
+        seletor {
+            propriedade: valor;
+        }
+
+    Seletor:
+        É quem você quer estilizar, será selecionado através das tags utilizadas no HTML e também como veremos adiante através de IDs e classes.
+        
+    Chaves:
+        Os estilos ficam dentro de chaves, tudo que esta dentro será aplicado ao seletor.
+    
+    Declaração: Cada linhas dentro das chaves é chamda de declaração, ela contém  uma propriedade e um valor, separadas por dois pontos (:)
+
+    Ponto e vírgula
+        Cada declaração deve terminar com #; para indicar o fim dela, serve como uma sepração entre propriedades.-->
+
+<!-- 
+Aplicando estilos
+    Em CSS, os estilos são aplicados a elementos HTML para alterar a aparência e o layout da página, como cores, tamanhos, fontes, margens e posicionamento.
+    Existem 3 formas principais de aplicar CSS: inline, interno e externo, cada uma com suas características e usos.
+
+inline
+    A forma inline aplica o estilo diretamente no próprio elemento HTML, usando o atributo #style. Não é recomendado que se aplique o estilo inline a um documento, principalmente se ele for grande, devido a grande dificuldade de manutenção e dificuldade para ler com foco no HTML.
+    Ex:-->
+
+    <p>Vamos criar um parágrafo azul</p>
+    <p style="color: blue;">Vamos criar um parágrafo azul</p>
+<!-- 
+Interna
+    A forma interna consiste em colocar os estilos dentro de uma tag <style> no <head> do documento HTML. Essa abordagem permite aplicar estilos a várias elementos sem repetir o código em cada um. Esse abordagem é bastante utilizada para documentos pequenos porém não é recomendada sua utilização devido ao encapsulamento de informações. Para facilitar a leitura do seu HTML e deixá-lo mais limpo é melhor utilizar a abordagem que veremos adiante.
+    Utilizaremos bastante essa abordagem nos estudos, porém com fins didáticos.
+    Ex:-->
+    
+        <!-- 
+        <!DOCTYPE html>
+        <html lang="pt-BR">
+        <head>
+            <meta charset="UTF-8">
+            <title>Exemplo CSS Interno</title>
+            <style>
+                p {
+                color: green;
+                font-size: 16px;
+                }
+            </style>
+        </head> 
+        -->
+
+        <style>
+            h1 {
+                color: blueviolet;
+            }
+        </style>
+        <h1>Um título de cor blueviolet</h1>
+
+<!-- 
+Externa 
+    A forma externa envole criar um arquivo seprado com extensão .css, que é vinculado ao HTML usando a tag <link> no <head>. Isso facilita a manutenção de estilos em várias páginas. Por exemplo, em um arquivo chamado estilo.css, assim todos os estilos no arquivo são aplicados à página.
+    Observe que temos o atributo #href, este deve ter no seu valor o caminho para o arquivo .css que será utilizado em seu HTML.
+    Todos os exercícios devem ser realizados utlizando a abordagem externa, assim o estudante terá mais proximidade com a realidade.
+    Ex:
+    
+        <!DOCTYPE html>
+        <html lang="pt-BR">
+        <head>
+            <meta charset="UTF-8">
+            <title>Exemplo CSS Interno</title>
+            <link rel="stylesheet" href="estilo.css">
+        </head> 
+        -->
+
+    
