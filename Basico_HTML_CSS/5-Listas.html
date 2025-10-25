@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {font-size: 16px;}
+        p, li {font-size: 1.3em; margin-left: 50px;}
+        .exemplo {font-size: 1.75em; font-weight: 500;margin-left: 25px; background-color: rgb(213, 211, 208);}        
+    </style>
+    <title>Listas</title>
+</head>
+<body>
+
+<!-- 
+HTML Listas 
+    As listas em HTML são muito importante, você irá às usar constantemente então fique atento.Vamos apresentar as listas ordenada, listas não ordenada, e listas descritivas.
+    
+    *Listas não ordenada
+    Uma lista não ordenada começa com a tag <ul> e cada item dessa lista começa com a tag <li>, observe que nós temos um ponto no inpicio de cada item, portanto não é enumerado.-->
+
+        <h1 class="exemplo">Exemplo - Lista não ordenada</h1>
+        <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ul>
+    <!--É de importancia prática conhecer o atalho em que você segura alt com a barra na linha desejada e aperte seta para cima ou para baixo. Você irá mover os itens para cima ou para baixo sem ter que escrever novamente o item da lista.
+        Também é importante conhecer alt+shift+seta pra baixo, você irá copiar o item da linha para a linha de baixo. 
+        
+    *Listas ordenadas
+    Uma lista ordenada começa com a tag <ol>, observe que temos um número na frente da lista o enumerando.-->
+
+        <h1 class="exemplo">Exemplo - Lista ordenada</h1>
+        <ol>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ol>
+
+<!-- 
+    *Listas descritivas
+    É uma lista com uma descrição de cada termo, não muito usada mas é importante saber que existe pois você pode ver em código de outras pessoas. 
+    A tag <dl> abre uma lista de descrição, o <dt> define o termo (nome), e o <dd> descreve cada termo.-->
+
+    <h1 class="exemplo">Exemplo - Lista descritiva</h1>
+    <dl>
+        <dt>Café</dt>
+        <dl>- leite e cafeína</dl>
+        <dt>Achocolatado</dt>
+        <dl>- leite e Toddy</dl>
+    </dl>
+
+<!--
+CSS Listas
+    Agora iremos ver como estilizar cada lista e principais estilos que fazem parte do dia profissional 
+
+    Antes de tudo é importante saber que a <ul> e a <ol> é uma tag de bloco e por isso deve-se tomar cuidade com seu posicionamento na tela. E o <li> é um display muito parecido com display-block mas por ter os marcadores se chama list-item.
+
+    *list-style-type
+    Especifica o tipo de marcador em uam lista. Vamos alterar os marcadores para cada item de uma lista, mas você pode utilizar essa propriedade em <ul> ou <ol> para alterar todos os marcadores de uma vez. É importante observar que também temos o modo upper e lower, alterando se é maiúscula ou minúscula.-->
+
+    <h1 class="exemplo">Exemplo - Estlizando a marcador </h1>
+    <style>
+        /* Lista não ordenada */
+        #circle {list-style-type: circle;}
+        #disc {list-style-type: disc;}
+        #square {list-style-type: square;}
+        /* Listas ordenada */
+        #upper-roman {list-style-type: upper-roman;}
+        #decimal {list-style-type: decimal;}
+        #upper-alpha {list-style-type: upper-alpha;}
+
+    </style>
+
+    <ul>
+        <li id="circle">Item 1</li>
+        <li id="disc">Item 2</li>
+        <li id="square">Item 3</li>
+    </ul>
+
+    <ol id="upper-roman">
+        <li>Item</li>
+        <li>Item</li>
+        <li>Item</li>
+        <li>Item</li>
+    </ol>
+    
+    <ol id="decimal">
+        <li>Item</li>
+        <li>Item</li>
+        <li>Item</li>
+        <li>Item</li>
+    </ol>
+    
+    <ol id="upper-alpha">
+        <li>Item</li>
+        <li>Item</li>
+        <li>Item</li>
+        <li>Item</li>
+    </ol >
+
+<!-- Você também pode substituir o marcador por uma imagem para deixar mais estilosa a sua lista. -->
+    
+    <style>
+        #subsmarc {list-style-image: url(../Imagens/Lista.jpg);}
+        
+    </style>
+
+    <ul id="subsmarc">
+        <li class="lilist">Substituição do marcador da lista</li>
+        <li class="lilist">Substituição do marcador da lista</li>
+        <li class="lilist">Substituição do marcador da lista</li>
+    </ul>
+
+<!-- 
+CSS Posicionamento dos marcadores do item de uma lista
+    Essa propriedade é muit importante, eu mesmo já me deparei com inúmeras com o posicionamento de marcadores causando problemas em uma página de web.
+    
+    *list-style-position
+    É uma propriedade que especifica a posição dos marcadoers do item de uma lista. Ela pode ser fora do item, ou pode ser dentro do item da lista. Vejamos os exemplo abaixo em que foi colocado uma borda em cada <li> para melhor demonstração.-->
+
+    <h1 class="exemplo">Exemplo - Posicionamento do marcador </h1>
+    <style>
+        #marc_out li, #marc_in li {border: 2px solid black; width: 100px;}
+        #marc_out {list-style-position: outside;}
+        #marc_in {list-style-position: inside;}
+    </style>
+
+    <ul id="marc_out">
+        <li>Item 1</li>
+        <li>Item 1</li>
+        <li>Item 1</li>
+    </ul>
+    
+    <ol id="marc_in">
+        <li>Item 2</li>
+        <li>Item 2</li>
+        <li>Item 2</li>
+    </ol>
+
+<!--
+    *list-style-type: none
+    Você pode remover os marcadores de uma item da lista, muitas vezes será necessário durante sua jornada. -->
+
+    <h1 class="exemplo">Exemplo - Removendo o marcador </h1>
+    <style>
+        #remov_marc {list-style-type: none;}
+    </style>
+
+    <ul id="remov_marc">
+        <li>Remover marcadores</li>
+        <li>Remover marcadores</li>
+        <li>Remover marcadores</li>
+        <li>Remover marcadores</li>
+    </ul>
+
+<!--Tudo pode ser resumindo utilizando list-style e utilizando a seguinte ordem
+
+    list-style: type position image
+    
+CSS listas com cores
+    Agora iremos ver o comportamento das caixas da listas quanto ao seu backgroud-color-->
+
+    <h1 class="exemplo">Exemplo - Cores em listas </h1>
+    
+    <!-- Observe no exemplo abaixo comportamento da caixa <ul> e <li>, a cor da tag <ul> fica por baixo de <li>, foi acrescentado um padding em <ul> para vermos como uma borda. -->
+    <style>
+        #ul_1 {list-style-type: none; background-color: rgb(66, 66, 237);padding: 3px;}
+        #ul_1 li {background-color: blanchedalmond;}
+    </style>
+
+    <ul id="ul_1">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+    
+    <!-- Agora iremos seprar um pouco as caixas de <li>, você deve usar para o espaçamente entre elas a propriedade margin. Observe que apartir do momento que você define uma margem, o espaçamento do marcador que já vem padrão, irá desaparecer. -->
+    <style>
+        #ul_2 {list-style-type: none;background-color: rgb(66, 66, 237);padding: 3px;}
+        #ul_2 li {background-color: blanchedalmond; margin: 4px;}
+        
+        /* Irei limitar o tamnho das caixas, observe que <li> tem 50% do elemento pai */
+        #ul_2 {width: 50%;}
+        #ul_2 li {width: 50%;}
+    </style>
+
+    <ul id="ul_2">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+</body>
+</html>
