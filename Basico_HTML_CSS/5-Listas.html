@@ -191,5 +191,22 @@ CSS listas com cores
         <li>Item 2</li>
         <li>Item 3</li>
     </ul>
+
+    <!-- Você pode adicionar colunas nos seus itens em lista, mas com o métoda abaixo ele não oferece um total controle dos itens e seus posicionamentos, o método mais indicado é com display grip e flex, algo que ainda será visto nos estudos. No exemplo abaixo iremos indicar que queremos 2 colunas com columns e colocaremos uma distância entre elas com column-gap. -->
+
+    <style>
+        #colum_2 {columns: 2; column-gap: 20px;}
+        #colum_2 {list-style-type: none; background-color: rgb(66, 66, 237);padding: 3px; width: 50%; text-align: center;}
+        #colum_2 li {background-color: blanchedalmond; margin: 2px;}
+    </style>
+
+    <ul id="colum_2">
+        <li>Item da lista</li>
+        <li>Item da lista</li>
+        <li>Item da lista</li>
+        <li>Item da lista</li>
+        <li>Item da lista</li>
+        <li>Item da lista</li>
+    </ul>
 </body>
 </html>
