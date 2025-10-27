@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .exemplo {font-size: 1.75em; font-weight: 500;margin-left: 25px; background-color: rgb(238, 235, 230); width: 40%;}
+    </style>
+    <title>POsicionamento em Grid</title>
+</head>
+<body>
+
+<!--  
+Posicionamento em Grid
+    Com um display="grid", teremos um posicionamento com um layout em grade, de linhas e colunas. Esse display é muito importante para os estudos, porque ele permite que os desenvolvedores criem facilmente layouts web complexos.
+    
+CSS Grid
+    Um contêiner de grade contém um ou mais itens dispostos em colunas e linhas, esses itens que são filhos diretos tornam-se automaticamente itens de grade.
+    Dentro do contêiner Grid, você pode definir o número, o tamanho das colunas ou das linhas. Para isso utilizaremos:
+    
+    *grid-template-columns
+    Define o número e a largura das colunas da grade
+    *grid-template-rows
+    Define o número e a altura das linhas de grade
+    *grid-template-areas
+    Define como exibir colunas e linhas usando itens de grade nomeados.
+    
+    Agora iremos demonstrar exemplos atráves de <div>, claramente é necessário criar uma que seja o elemento pai para dispor as filhas como itens de grade. Irei deixá-las padronizadas para os exemplos.-->
+    
+    <style>
+        /* Estilos padrão para iniciarmos as observações */
+        .container1 {background-color: rgb(67, 191, 245); padding: 10px;}
+        .container1 div {background-color: rgb(173, 247, 235); font-size: 40px; text-align: center;}
+        
+        /* Estilos para os itens de grade */
+        .container1 {
+            display: grid;
+            /* 3 colunas foram acrescentadas com o seu tamanho em auto, experimento retirar um auto para criar com 2 colunas */
+            grid-template-columns: auto auto auto;
+            /* Para separar os itens você utiliza gap */
+            gap: 3px;
+        } 
+    </style>
+    
+    <h1 class="exemplo">Exemplo - Display Grid 1 - Introdução</h1>
+    <div class="container1">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+
+<!--
+    Agora iremos criar um layout em que os itens tenho tamanhos diferentes, para isso iremos deixar um tamnho fixo para os itens, mas iremos deixar um em auto para completar o tamanho do container-pai-->
+
+    <style>
+        .container2 {background-color: rgb(67, 191, 245); padding: 10px;}
+        .container2 div {background-color: rgb(173, 247, 235); font-size: 40px; text-align: center;}
+        
+        /* Estilos para os itens de grade */
+        .container2 {
+            display: grid;
+            grid-template-columns: 50px 100px auto;
+            gap: 3px;
+            
+            /* Observe que ao reduzir a tela apenas a coluna definida como auto era ser redimensionada */
+        } 
+    </style>
+
+    <h1 class="exemplo">Exemplo - Display Grid 2 - Tamanho mistos</h1>
+    <div class="container2">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+
+<!-- 
+    Quando não for possível utilizar números precisos, pode-se utilizar suas dimensões através de unidade de frações -->
+
+    <style>
+        .container3 {background-color: rgb(67, 191, 245); padding: 10px;}
+        .container3 div {background-color: rgb(173, 247, 235); font-size: 40px; text-align: center;}
+        
+        /* Estilos para os itens de grade */
+        .container3 {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            gap: 3px;
+            
+            /* É importante observar que nesse caso a tela foi dividida em 4 partes, pois uma grade pcupa 2 espaços. Agora redimensione a tela para ver que ambos irão se redimencionar.*/
+        } 
+    </style>
+
+    <h1 class="exemplo">Exemplo - Display Grid 3 - Unidade fracionária</h1>
+    <div class="container3">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+
+<!-- 
+    Caso vc tenho muitas itens e seja necessário dividir a tela em muitas colunas pode ser interessante que se escreva de uma forma mais condensada. -->
+
+    <style>
+        .container4 {background-color: rgb(67, 191, 245); padding: 10px;}
+        .container4 div {background-color: rgb(173, 247, 235); font-size: 40px; text-align: center;}
+        
+        /* Estilos para os itens de grade */
+        .container4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3px;
+            
+            /* repeat irá aceitar 2 parâmetros, o primeiro é a quantidade e o segundo o valor a ser multiplicado. Nesse caso temos 4 itens de 1fr */
+        } 
+    </style>
+
+    <h1 class="exemplo">Exemplo - Display Grid 4 - repeat()</h1>
+    <div class="container4">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+
+<!--
+    Muitas vezes para não quebrar um layout é necessário definiar um tamanho mínimo ou máximo, então utilize a seguinte propriedade. -->
+
+    <style>
+        .container5 {background-color: rgb(67, 191, 245); padding: 10px;}
+        .container5 div {background-color: rgb(173, 247, 235); font-size: 40px; text-align: center;}
+        
+        /* Estilos para os itens de grade */
+        .container5 {
+            display: grid;
+            grid-template-columns: minmax(250px, 1fr) 2fr 1fr;
+            gap: 3px;
+        
+            /* No exemplo  acima dissemos para que a primeira colunas diminua até no máximo 200px, quando for posspivel que ela tenho mais que isso, irá se compoetar como uma parte da fração total. Experimente redimensionar a tela para ver quando essa colunas irá para de ser reduzida*/
+        
+        } 
+    </style>
+
+    <h1 class="exemplo">Exemplo - Display Grid 5 - minmax()</h1>
+    <div class="container5">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+
+    <!-- 
+    Agora da mesma forma podemos ver a grade sendo definida quando a altura de suas linhas -->
+
+    <style>
+        .container6 {background-color: rgb(67, 191, 245); padding: 10px;}
+        .container6 div {background-color: rgb(173, 247, 235); font-size: 40px; text-align: center;}
+        
+        /* Estilos para os itens de grade */
+        .container6 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 60px 1fr 2fr 120px;
+            gap: 3px;
+        } 
+
+        /* Observe que temos agora um problema, os números não estão centralizados. Isso será facilmente resilvido com um display-flex mas é um assunto que ainda veremos adiante. */
+    </style>
+
+    <h1 class="exemplo">Exemplo - Display Grid 6 - Altura das linhas</h1>
+    <div class="container6">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+    </div>
+
+<!-- 
+CSS Grid Areas
+    Um item pode abranger várias colunas ou linhas, podemos especificar de onde essa linhas começa e onde ela termina, fazendo assim com que ela ocupe áreas no seu layout.
+    Devemos conhecer as propriedades antes:
+    
+    *grid-column-start - Especifica em qual coluna-linha o item da grade será iniciado
+    *grid-column-end - Especifica em qual coluna-linha o item da grade irá terminar
+
+    
+    Da mesma forma temos para as linhas:
+    
+    *grid-row-start- Especifica em qual linha-linha o item da grade será iniciado
+    *grid-row-end- Especifica em qual linha-linha o item da grade terminará
+    
+    Para facilitar usaremos uma redução:
+    Elas deverão estar dispostas na seguinte ordem start / end
+    É importante saber que as grades começam a ser contadas do número 1 da essquerda para a direta, cima para baixo, a última pode ser contada como -1 seguindo o número negativo adiante com a coluna de trás para frente.
+    
+    *grid-column - start / end
+    *grid-row - start / end
+
+    Você pode utilizar a unidade span para dizer que ela irá expadir as grades necessárias
+    -->
+    <style>
+        .containerArea1 {background-color: rgb(247, 216, 126); padding: 10px;}
+        .containerArea1 div {background-color: rgb(163, 85, 247); font-size: 40px; text-align: center;}
+
+        .containerArea1 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+            gap: 4px;}
+
+        /* Agora iremos criar as areas de cada item */
+        #item1 {grid-column: 1 / -1;}
+        #item2 {grid-column: 1 / 2; grid-row: 2 / 4;}
+        #item3 {grid-column: 2 / -1; grid-row: 2 / span 2;}
+        #item4 {grid-column: 1 / 3; grid-row: 4 / span 1;}
+        #item5 {grid-row: 4 / -1;}
+        #item6 {grid-column: 1 / span 2;}
+            
+    </style>
+
+    <h1 class="exemplo">Exemplo - Display Grid 7 - Grid Area</h1>
+    <div class="containerArea1">
+        <div id="item1">1</div>
+        <div id="item2">2</div>
+        <div id="item3">3</div>
+        <div id="item4">4</div>
+        <div id="item5">5</div>
+        <div id="item6">6</div>
+    </div>
+
+<!-- 
+    Também pode ser criar áreas utilizando nomes, assim podemos ter uma visualização na escrita para criar outras formas -->
+
+    <style>
+        .containerArea2 {background-color: rgb(247, 216, 126); padding: 10px;}
+        .containerArea2 div {background-color: rgb(163, 85, 247); font-size: 40px; text-align: center;}
+
+        .containerArea2 {
+            display: grid;
+            grid-template-areas: 
+                "item1 item1 item2 ."
+                "item1 item1 item2 ."
+                "item5 item5 item6 item6 ";
+            gap: 4px;}
+        #item11 {grid-area: item1;}
+        #item21 {grid-area: item2;}
+        #item51 {grid-area: item5;}
+        #item61 {grid-area: item6;}
+    </style>
+
+    <h1 class="exemplo">Exemplo - Display Grid 8 - Grid Area Nomeado</h1>
+    <div class="containerArea2">
+        <div id="item11">1</div>
+        <div id="item21">2</div>
+        <div id="item31">3</div>
+        <div id="item41">4</div>
+        <div id="item51">5</div>
+        <div id="item61">6</div>
+    </div>
+
+<!-- 
+CSS Grid - Alinhamento de conteúdos
+    É possível alinhar os conteúdos no eixo vertical e horizontal, é importante saber que é necessário que se tenha espaço sobrando para isso:
+    
+    *justify-content - Alinha o conteúdo da grade eixo principal (horizontalmente)
+    *align-content- Alinha o conteúdo da grade no eixo cruzado (verticalmente)
+    
+    Temos também uma propriedade que resume as duas acima, ela deve ser escrita na seguinte ordem, vertical e horizontal.
+    
+    *place-content - align-contente justify-content
+    
+    Temos os seguintes valores de agrupamento:
+        space-evenly
+        space-around
+        space-between
+        center
+        start
+        end
+    -->
+    
+    <h1 class="exemplo">Exemplo - Display Grid 9 - Grid Alinhando o Conteúdo</h1>
+    <style>
+        .containerAl1 {background-color: rgb(243, 246, 182); padding: 10px;height: 300px;}
+        .containerAl1 div {background-color: rgb(65, 245, 149); font-size: 40px; text-align: center; width: 100px; height: 100px;}
+        /* Foi dado um valor para as dimensões da div-filha e uma dimensão vertical maior para a div-pai */
+
+        .containerAl1 {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            gap: 4px;
+            place-content: space-between space-evenly;
+            /* Experimento aqui vários valores
+            É importante pesquisar as imagens de posicionamento para maior conhecimento */
+        }
+
+    </style>
+
+    <div class="containerAl1">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+
+    
+</body>
+</html>
