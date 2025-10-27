@@ -287,18 +287,24 @@ CSS Grid - Alinhamento de conteúdos
     *place-content - align-contente justify-content
     
     Temos os seguintes valores de agrupamento:
+        start
+        center
+        end
         space-evenly
         space-around
         space-between
-        center
-        start
-        end
     -->
     
     <h1 class="exemplo">Exemplo - Display Grid 9 - Grid Alinhando o Conteúdo</h1>
     <style>
-        .containerAl1 {background-color: rgb(243, 246, 182); padding: 10px;height: 300px;}
-        .containerAl1 div {background-color: rgb(65, 245, 149); font-size: 40px; text-align: center; width: 100px; height: 100px;}
+        .containerAl1 {
+            background-color: rgb(243, 246, 182); 
+            padding: 10px;
+            height: 300px;}
+        .containerAl1 div {
+            background-color: rgb(65, 245, 149); 
+            font-size: 40px; text-align: center; 
+            width: 100px; height: 100px;}
         /* Foi dado um valor para as dimensões da div-filha e uma dimensão vertical maior para a div-pai */
 
         .containerAl1 {
@@ -309,7 +315,6 @@ CSS Grid - Alinhamento de conteúdos
             /* Experimento aqui vários valores
             É importante pesquisar as imagens de posicionamento para maior conhecimento */
         }
-
     </style>
 
     <div class="containerAl1">
@@ -320,6 +325,70 @@ CSS Grid - Alinhamento de conteúdos
         <div>5</div>
         <div>6</div>
     </div>
+
+<!-- 
+CSS Grid - Alinhamento das células
+    É possível alinhas individualmente cada item do seu layout em grade com:
+
+    *justify-self- Especifica o alinhamento horizontal dentro de uma célula 
+    *align-self- Especifica o alinhamento vertical dentro de uma célula
+    
+    Mas nós usaremos a propriedade que as resume em apenas uma, assim como foi feito no exemplo anterior. Lembre-se de dar os valores seguindo a mesma ordem, align-selfe justify-self
+    
+    *place-self: align-selfe justify-self
+    
+    Ela podde assumir os seguintes valores:
+
+        auto - valor herdado do container
+        stretch - estica até preencher o espaço - padrão
+        start - horizontal e vertical
+        center - horizontal e vertical
+        end - horizontal e vertical
+        
+        É bom evitar de usar esses valores abaixo:
+        normal - comportamento do navergador
+        left - horizontal
+        right - horizontal
+    -->
+
+<h1 class="exemplo">Exemplo - Display Grid 10 - Grid Alinhamento Indidual</h1>
+    <style>
+        .containerAi1 {
+            background-color: rgb(243, 246, 182); 
+            padding: 10px;
+            height: auto;}
+        .containerAi1 div {
+            background-color: rgb(65, 245, 149); 
+            font-size: 40px; text-align: center; 
+            }
+        /* Foi dado um valor para as dimensões da div-filha e uma dimensão vertical maior para a div-pai */
+
+        .containerAi1 {
+            display: grid;
+            grid-template-columns: 100px 100px 100px;
+            grid-template-rows: 100px 100px;
+            gap: 4px;
+            /* place-content: center center; */
+        }
+
+        #Ai1 {place-self: start stretch;}
+        #Ai2 {place-self: center stretch;}
+        #Ai3 {place-self: end end;}
+        #Ai4 {place-self: center center;}
+        #Ai5 {place-self: center end;}
+        #Ai6 {place-self: center left;}
+    </style>
+
+    <div class="containerAi1">
+        <div id="Ai1">1</div>
+        <div id="Ai2">2</div>
+        <div id="Ai3">3</div>
+        <div id="Ai4">4</div>
+        <div id="Ai5">5</div>
+        <div id="Ai6">6</div>
+    </div>
+
+
 
     
 </body>
