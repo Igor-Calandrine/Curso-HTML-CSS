@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+body {
+    width: 95%;
+    margin: auto;
+    padding: 10px;
+}
+
+.exemplo {
+    font-size: 2.3em; 
+    font-weight: 500;
+    margin-left: 50px; 
+    background: linear-gradient(to right, rgb(216, 217, 217), white);
+    padding: 6px;
+}

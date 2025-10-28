@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .exemplo {font-size: 1.75em; font-weight: 500;margin-left: 25px; background-color: rgb(238, 235, 230); width: 40%;}
+    </style>    
+    <title>Alinhamento de conteúdos</title>
+</head>
+<body>
+
+<!-- 
+CSS Justify-Content - Align-Content
+    Assim como em display-grid, temos também o alinhamento de conteúdos quando eles não utilizam todo o espaço disponível no eixo-principal e no eixo-secundário. Essa propriedade é bastante importante e bastante utlizada para alinhas textos dento de blocos. Ela pode assumir os seguintes valores:
+
+    start (default) 
+    center
+    end
+    space-between
+    space-around
+    space-evenly
+    -->
+
+    <h1 class="exemplo">Exemplo 1 - CSS Justify-Content</h1>
+    <style>
+        .flex1 {background-color: rgb(157, 245, 179);padding: 6px; height: 400px;}
+        .flex1 div {width: 300px; height: 100px; background-color: rgb(237, 170, 76);text-align: center;}
+
+        .flex1 {
+            display: flex;
+            gap: 6px;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            align-content: space-evenly;
+            /* Experimente trocar os valores e redimensionar a tela */
+        }
+    </style>
+
+    <div class="flex1">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+
+<!--  
+CSS Align-Items
+    Essa propriedade é usada para alinhas os itens quando eles não usam todo o espaço disponível no eixo secundário. Pode assumir os seguintes valores:
+    
+        stretch - expandem até não sobrar espaço (default)
+        start
+        center
+        end
+        baseline - alinhadas de acordo com a linha base do texto
+
+        *Para que o valor stretch funcione corretamente é necessário tirar a dimensão dada no exemplo.
+    -->
+
+    <h1 class="exemplo">Exemplo 2 - CSS Justify-Content</h1>
+    <style>
+        .flex2 {background-color: rgb(157, 245, 179);padding: 6px; height: 200px;}
+        .flex2 div {width: 300px; height: 100px; background-color: rgb(237, 170, 76);text-align: center;}
+
+        .flex2 {
+            display: flex;
+            gap: 6px;
+            flex-flow: row wrap;
+            align-content: center;
+        }
+    </style>
+
+    <div class="flex2">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+
+
+
+
+
+    
+</body>
+</html>

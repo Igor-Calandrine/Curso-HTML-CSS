@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .exemplo {font-size: 1.75em; font-weight: 500;margin-left: 25px; background-color: rgb(238, 235, 230); width: 40%;}
+    </style>
+    <title>CSS Flexbox</title>
+</head>
+<body>
+
+<!-- 
+CSS Flexbox
+    O CSS Flexbox é um modela de layout para organizar itens (horizontalmente ou verticalmente) dentro de um recipiente, de forma flexível e responsiva. Ela evita a utilização de #float ou posicionamento. 
+    Quanso aplicamos display:flex em uma caixa, seus filhos passam a ter um tamanho flexível e ficam um ao lado do outro. Observe o exemplo abaixo em que aplicamos flexbox e deixamos uma sepração dos itens com gap-->
+
+    <h1 class="exemplo">Exemplo 1 - Instrodução</h1>
+    <style>
+        .flex1 {background-color: rgb(155, 208, 208);padding: 4px;}
+        .flex1 div {width: 100px; height: 100px; background-color: rgb(150, 249, 216);text-align: center;}
+
+        .flex1 {
+            display: flex;
+            gap: 4px;
+        }
+        /* Experimente comentar o estilo acima para ver a diferença*/
+    </style>
+
+    <div class="flex1">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+
+<!-- 
+CSS flex-direction
+    A direção para onde será formada a linhas da flexbox pode ser configurada com a propriedade e utilizando os seguintes valores:
+    
+        row (default)
+        column
+        row-reverse
+        column-reverse
+    -->
+    <h1 class="exemplo">Exemplo 2 - CSS Flex-Direction</h1>
+    <style>
+        .flex2 {background-color: rgb(155, 208, 208);padding: 4px;}
+        .flex2 div {width: 400px; height: 100px; background-color: rgb(150, 249, 216);text-align: center;}
+
+        .flex2 {
+            display: flex;
+            gap: 4px;
+            flex-direction: row-reverse;
+            /* Experimente cada um dos valores */
+        }
+    </style>
+
+    <div class="flex2">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+
+<!-- 
+CSS flex-wrap
+    Essa propriedade especifica se os itens flex devem quebrar para a próxima linhas ou não, caso não tenha espaço  suficiente para eles em uma linha. Temos os seguintes valores:
+
+    
+        nowrap(default)
+        wrap
+        wrap-reverse
+    
+    Note que com o exemplo abaixo os itens agora não irão reduzir de tamanho ao ajustar a dimensão da tela, eles irão passar para a linha de baixo. -->
+
+    <h1 class="exemplo">Exemplo 3 - CSS Flex-wrap</h1>
+    <style>
+        .flex3 {background-color: rgb(177, 209, 239);padding: 4px;}
+        .flex3 div {width: 400px; height: 100px; background-color: rgb(189, 237, 245);text-align: center;}
+
+        .flex3 {
+            display: flex;
+            gap: 4px;
+            flex-wrap: wrap;
+        }
+    </style>
+
+    <div class="flex3">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+
+<!-- 
+CSS flex-flow
+    É uma propriedade que resume flex-direction e flex-wrap, e deve ser escrita nessa respectiva ordem-->
+
+    <h1 class="exemplo">Exemplo 4 - CSS Flex-flow</h1>
+    <style>
+        .flex4 {background-color: rgb(239, 245, 157);padding: 4px;}
+        .flex4 div {width: 400px; height: 100px; background-color: rgb(205, 237, 76);text-align: center;}
+
+        .flex4 {
+            display: flex;
+            gap: 4px;
+            flex-flow: row-reverse wrap;
+        }
+    </style>
+
+    <div class="flex4">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+
+
+
+    
+</body>
+</html>

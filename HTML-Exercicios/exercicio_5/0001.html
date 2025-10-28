@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Border Animation</title>
+    <style>
+        h1, p {
+            padding: 5px 10px;
+            margin: 10px 12px;
+            color: rgb(252, 252, 252);
+        }
+
+        p {
+            color: rgb(219, 219, 219);
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        div {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            text-align: center;
+            background-color: rgb(46, 42, 67);
+            width: 300px;
+            height: 300px;
+            border-radius: 20px;
+            position: relative;
+        }
+
+        @property --angle {
+            syntax: "<angle>";
+                initial-value: 0deg;
+                inherits: false;
+        }
+
+            @property --angle2 {
+            syntax: "<angle>";
+                initial-value: 0deg;
+                inherits: false;
+        }
+
+
+        div::after, div::before {
+            content: "";
+            height: 100%;
+            width: 100%;
+            background-image: conic-gradient(from var(--angle), transparent 0deg 90deg, rgb(91, 249, 249), transparent 180deg 270deg, rgb(91, 249, 249));
+            border-radius: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            padding: 3px;
+            animation: 4s spin linear infinite;
+            
+        }
+
+        div::before {
+            filter: blur(2rem);
+            opacity: 0.8;
+        }
+
+        @keyframes spin {
+            from {
+                --angle: 0deg
+            }
+            to{
+                --angle: 360deg
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Animated Borders</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus nisi rerum sapiente deleniti consequuntur facere, illum ratione ducimus quaerat facilis quasi vero, nemo adipisci repudiandae voluptate commodi minus! Nihil, quos!</p>
+    </div>
+    
+</body>
+</html>

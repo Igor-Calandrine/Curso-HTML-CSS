@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../estilos.css">
+    <title>Flex Itens</title>
+</head>
+<body>
+    
+<!-- 
+CSS Flex Itens
+    Destacaremos as propriedades mais importantes dos elementos filhos:
+    
+    flex-grow
+    flex-shrink
+    flex-basis
+    flex- Propriedade de taquigrafia para flex-grow, flex-shrink, e flex-basis
+    align-self- Especifica o alinhamento para o item flex dentro do recipiente flex
+
+CSS Flex-Basis
+É uma propriedade que especifica o comprimento inicial de um item flexível, ela é muito importante para substituir width no caso, porque ela poderá não irá fixar um valor.-->
+        
+    <h1 class="exemplo">Exemplo 1 - Flex-Basis</h1>
+    <style>
+        .Con1 {
+            background-color: rgb(132, 253, 253); padding: 7px;
+            font-size: 2em;
+            text-align: center;
+            display: flex;
+            gap: 10px;
+            flex-flow: row nowrap;
+            /* Foi importante deixar nowrap para espremer o conteúdo */
+            justify-content: center;
+        }
+
+        .Con1 div {
+            background-color: rgb(252, 252, 179);
+            flex-basis: 300px;
+            /* width: 300px; */
+        }
+    </style>
+
+    <div class="Con1">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>        
+<!--
+CSS Flex-Grow e Flex-Shrink
+    A propriedade fllex-grow especifica quanto um item flex vai crescer em relação ao resto dos itens enquanto que a flex-shrink qunato irá reduzir.
+    O valor padrão é 0, ou seja, sem feito.
+    Observe que agor também as div-filhas que tiverem valores diferente de 0 em Flex-Grow irão ocupar todo o espaço vazio.
+-->
+
+<h1 class="exemplo">Exemplo 2 - Flex-Grow e Flex-Shrink</h1>
+<style>
+    .Con2 {
+        background-color: rgb(132, 253, 253); padding: 7px;
+        font-size: 2em;
+        display: flex;
+        gap: 10px;
+        flex-flow: row nowrap;
+        text-align: center;
+    }
+
+    .Con2 div {
+        background-color: rgb(252, 252, 179);
+        flex-basis: 300px;
+    }
+
+    #F1 {flex-grow: 0; flex-shrink: 0;}
+    #F2 {flex-grow: 1; flex-shrink: 1;}
+    #F3 {flex-grow: 0; flex-shrink: 1;}
+    #F4 {flex-grow: 2; flex-shrink: 1;}
+</style>
+
+<div class="Con2">
+    <div id="F1">1</div>
+    <div id="F2">2</div>
+    <div id="F3">3</div>
+    <div id="F4">4</div>
+</div>
+
+
+<!-- 
+CSS Flex
+    Assim temos uma propriedade que as resume e deve ser colocada na respctiva ordem: 
+    
+    flex:  flex-grow flex-shrink  flex-basis-->
+
+<h1 class="exemplo">Exemplo 3 - Flex</h1>
+<style>
+    .Con3 {
+        background-color: rgb(132, 253, 253); padding: 7px;
+        font-size: 2em;
+        display: flex;
+        gap: 10px;
+        flex-flow: row nowrap;
+        text-align: center;
+    }
+
+    .Con3 div {
+        background-color: rgb(252, 252, 179);
+        flex-basis: 300px;
+    }
+
+    #F5 {flex: 0 0 200px}
+    #F6 {flex: 1 1 200px}
+    #F7 {flex: 0 1 200px}
+    #F8 {flex: 2 1 200px}
+</style>
+
+<div class="Con3">
+    <div id="F5">1</div>
+    <div id="F6">2</div>
+    <div id="F7">3</div>
+    <div id="F8">4</div>
+</div>
+
+<!-- 
+CSS Align-Self
+    Essa propriedade especifica o alinhamento para o item específico no eixo secundário. Para isso será necessário que sobre espaço -->
+
+<h1 class="exemplo">Exemplo 4 - Align-Self</h1>
+<style>
+    .Con4 {
+        background-color: rgb(132, 253, 253); padding: 7px; height: 200px;
+        font-size: 2em;
+        display: flex;
+        gap: 10px;
+        flex-flow: row nowrap;
+        text-align: center;
+    }
+
+    .Con4 div {
+        background-color: rgb(252, 252, 179);
+        flex-basis: 300px;
+    }
+
+    #F41 {align-self: stretch;}
+    #F42 {align-self: start;}
+    #F43 {align-self: center;}
+    #F44 {align-self: end;}
+</style>
+
+<div class="Con4">
+    <div id="F41">1</div>
+    <div id="F42">2</div>
+    <div id="F43">3</div>
+    <div id="F44">4</div>
+</div>
+
+
+</body>
+</html>
