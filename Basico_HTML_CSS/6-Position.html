@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../estilos.css">
+    <title>Position</title>
+</head>
+<body>
+<!-- 
+CSS Position
+    O posicionamento é sobre o controle da colocação de elementos dentro de uma pagina web, assim você pode alterar o flux normal do documento. Essa propriedade pode ter os seguintes valores:
+        
+    static (Default) - Fluxo normal dos elementos
+    relative
+    fixed
+    absolute
+    sticky
+
+    Os elementos são posicionados referente a sua localização dada por top, bottom, left e right.
+
+CSS Position Fixed
+    Um elemento com position: fixed está posicionado em relação ao viewport, o que significa que sempre fica no mesmo lugar fixo, mesmo que a página esteja rolando. Observe o exemplo abaixo que iremos fixar um elemento na tela.
+    É importante também notar que o elemento não irá mais fazer parte do fluxo da tela.
+-->
+    <h1 class="exemplo">Exemplo 1 - Posição Fixa</h1>
+
+    <style>
+        body {height: 500vh;}
+        .pos1 {
+            font-size: 1.5em; text-align: center;
+            background-color: rgb(145, 218, 247);
+            padding: 6px; width: 400px;
+        }
+        .pos1 {
+            position: fixed;
+            right: 500px;}
+        /* Depois de colocar como fixo você pode posicionar o elemento na tela. Role a tela para ver o elemento fixo*/
+    </style>
+
+    <div class="pos1"><p>Um elemento fixo na tela</p></div>
+
+<!-- 
+CSS Position Relative
+    Um elemento com position:relative está posicionado em relação à sua posição normal no fluxo do documento.-->
+    <h1 class="exemplo">Exemplo 2 - Posição Relativa</h1>
+
+    <style>
+        .pos2 {
+            font-size: 1.5em; text-align: center;
+            background-color: rgb(145, 218, 247);
+            padding: 6px; width: 400px;}
+        
+        .pos2 {
+            position: relative;
+            top: 10px;
+            left: 90px;}
+        /* Altere os valores para ver a diferença na posiçao em relação a sua posição natural*/
+    </style>
+
+    <div class="pos2"><p>Um elemento relativo a seu posicionamento natural na tela</p></div>
+
+<!-- 
+CSS Position Absolute
+    Um elemento em position:absolute está posicionado em relação ao elemento pai mais próximo. No entanto, se um elemento não tem ancetrais, ele usa o corpo <body> do documento, e se move junto com a rolagem da página.
+    Esses elemento podem se sobrepor a outros elementos e para melhor controlar, usa-se o z-index. -->
+
+    <h1 class="exemplo">Exemplo 3 - Posição Absoluta</h1>
+
+    <style>
+        .pos3 {
+            font-size: 1.5em; text-align: center;
+            background-color: rgb(145, 218, 247); margin: auto;
+            width: 400px; height: 400px;}
+            
+        .pos3 p {
+            background-color: antiquewhite;
+            width: 300px; height: 150px;
+            margin: 0;
+        }
+
+        .pos3 {
+            position: relative;
+            top: 40px;
+            /* Experimente alterar o valor de top para ver apenas o elemento pai se reposicionando */
+        } 
+
+       .pos3 p {
+            position: absolute;
+            bottom: 0px;
+            right: 0px;} 
+            /* Experimento alterar o valor de bottom para ver apenas o filho se reposicionando */
+    </style>
+
+    <div class="pos3"><p>Um elemento relativo a seu posicionamento do seu elemento pai</p></div>
+<!-- 
+CSS Position Sticky
+    Um elemento position:sticky é conhecido como elemento pegajoso, sua posição pode ser relative ou fixed, dependendo da posição da rolagem. Ele é posicionado em relação até que ua determinada posição de rolagem seja alcançado, então ele gruda naquele lugar.-->
+
+    <h1 class="exemplo">Exemplo 4 - Posição Grude</h1>
+
+    <style>
+        .pos4 {
+            font-size: 1.5em; text-align: center;
+            background-color: rgb(145, 218, 247); margin: 0;
+            width: 250px; }
+            
+        .pos4 {
+            position: sticky;
+            top: 0;
+            /* Experimente alterar o valor de top para ver apenas o elemento pai se reposicionando */
+        } 
+    </style>
+
+    <div class="pos4"><p>Um elemento que irá grudar na tela</p></div>
+
+<!-- 
+    É bem notável que utilizar esse tipo de posicionamento pode quebrar a página de diversar maneiras, por isso deve-se evitar sua utlização em grande escala. Os elementos em flexbox e grid são reocomendados para formar layouts mais complexos. -->
+
+
+    
+</body>
+</html>
