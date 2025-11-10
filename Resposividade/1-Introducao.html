@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../estilos.css">
+    <title>Responsividade</title>
+</head>
+<body>
+
+<!--  
+Mediaqueries
+    Um layout responsivo se adapta a diferentes tipo/tamanhos de tela e as preferÊncias do usuário. Para isso é necessário que se use:
+    
+    Unidade relativas como %, vw, fr 
+    
+    Media Queries, um código que será atividade com o tamanho da tela.
+    
+    Flexbox e Grid, para adaptar o conteúdo com o tamanho da tela
+    
+    Tipo de cursos, deve ser alterado considerando a operação do site apenas com o dedo
+    
+Meta Viewport
+    A meta tag viewprt é essencial para garantir com que o HTML/CSS lide de forma correta com tela de alta densidade, ela normaliza o PX do CSS.
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+@media
+    A @media gera um loco de código que só será ativado caso a condição entre parênteses seja verdadeira.
+
+Ex: 
+    @media (max-width: 500px) - Até o máximo de 500px, ou seja, menores que 500px
+
+    @media (min-width: 600px) - Até o mínimo de 600px, ou seja, maiores que 600px
+
+    @media (min-width: 800px) and (max-width: 900px) - Entre 800px e 900px
+    -->
+    <h1 class="exemplo">Exemplo - Media Querie</h1>
+
+    <style>
+        .ex1 {width: 400px;height: 400px;background-color: aqua;margin: auto;}
+        
+        @media (max-width: 600px) {
+            .ex1 {width: 200px; height: 200px}
+        }
+    </style>
+
+    <div class="ex1">
+        <h1></h1>
+    </div>
+
+<!-- 
+Repeat(auto-fit) 
+    O repeat com auto-fit irá gerar o total de colunas que forem necessárias para preencher a área. Para visualizar melhor é necessário que altere o tamanho da tela-->
+
+    <h1 class="exemplo">Exemplo - repeat(auto-fit)</h1>
+
+    <style>
+        .ex2{display: grid; grid-template-columns: repeat(auto-fit, 200px);gap: 2px;}
+        .ex21 {width: 200px; height: 200px; background-color: burlywood;}
+    </style>
+
+    <div class="ex2">
+        <div class="ex21"></div>
+        <div class="ex21"></div>
+        <div class="ex21"></div>
+        <div class="ex21"></div>
+        <div class="ex21"></div>
+        <div class="ex21"></div>
+        <div class="ex21"></div>
+    </div>
+
+<!-- 
+Object-fit
+    As vezes pode ser interessante cortar uma imagem quando se aplica respondividade ou não deixar que essa imagem estique e fique com um design alterado. Para isso pode-se usar:
+    
+    object-fit - funciona como background-size. contém os valores como cover, contai e fill
+    object-position - indicando como ele deve ser cortado, top left, top center
+    
+Max-width
+    É muito importante conhecer o max-width pois com ele você irá controlar o máximo da tamanho que um objeto irá ter na tela, controlando assim o espaço de imagens e textos.
+    
+    Para isso também é importante conhecer a unidade #ch, que está relacioada a largura do caracteres 0 (zero) da tipografia, desta maneira é possível que seus textos não alcacem distâncias que dificultam sua leitura
+    
+    É importante também lembrar que para centralizar um elemento na tela você de ve usar #margin: 0 auto quanto possível-->
+
+    <h1 class="exemplo">Exemplo - Complementos max-width</h1>
+
+    <style>
+        .ex3 {
+            max-width: 1000px; 
+            margin: 0 auto;
+            display: grid;
+            gap: 1px;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .ex31 {
+            background-color: rgba(199, 240, 255, 0.752);
+        }
+        
+        .ex31 img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top right;
+            /* Com height a imagem passou também a ocupar toda a altura quando a caixa de texto expande.
+            Com com object-fit não deixamos a imagem esticar */
+        }
+        .ex32 {
+            background-color: rgba(127, 255, 212, 0.38);
+            align-self: center;
+        }
+
+        .ex32 p {
+            max-width: 40ch;
+            /* Experimente alterar o valor para ver o  <p> do texto se alongando mas a caixa da diva ainda se mantendo com o mesmo tamanho. */
+        }
+    </style>
+
+
+    <div class="ex3">
+        <div class="ex31">
+            <img src="../Imagens/Outono 1.jpg" alt="">
+        </div>
+        <div class="ex32">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore animi itaque quaerat ducimus inventore porro. Velit voluptatibus, rem nostrum pariatur dolorum, eligendi blanditiis ad quidem, quas ipsum quibusdam! Esse, veniam.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident voluptatem culpa consequatur consectetur quam nostrum ex aliquam ad nemo et cumque vero magnam saepe, impedit incidunt doloremque libero eum dolores.</p>
+        </div>
+    </div>
+
+
+    
+</body>
+</html>
