@@ -1,0 +1,210 @@
+.fundo-total-aside {
+    background-color: #232323;
+}
+
+aside {
+    background-color: #232323;
+    max-width: 1200px;
+    margin-top: 80px;
+    margin-inline: auto;
+    padding-top: 90px;
+    padding-left: 20px;
+    padding: 90px 0px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+}
+
+.formação {
+    color: black;
+    font-size: 5rem;
+    word-break: break-all;
+    max-width: 5ch;
+}
+
+.formação-top {
+    color: rgb(209, 209, 209);
+    letter-spacing: 0.3px;
+    display: grid;
+}
+
+.formação-top-descri {
+    max-width: 45ch;
+    font-size: 1.2rem;
+    line-height: 1.3;
+}
+
+.formação-top strong {
+    color: white;
+}
+
+.cursos {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.card-cursos {
+    background-color: black;
+    width: 22ch;
+    min-height: 157px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    position: relative;
+}
+
+.card-cursos::before {
+    content: "";
+    width: 4px;
+    height: 18px;
+    background:linear-gradient(to bottom, rgb(96, 254, 96), rgb(0, 168, 0));
+    position: absolute;
+    top: 54px;
+    left: -4px;
+}
+
+.card-cursos p {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    align-self: center;
+}
+
+.card-cursos h3 {
+    color: white;
+    font-size: 1rem;
+    max-width: 15ch;
+    align-self: top;
+}
+
+.card-cursos .instit {
+    font-size: 1rem;
+    display: block;
+    align-self:end;
+}
+
+.intensivos {
+    max-width: 500px;
+    margin-top: 40px;
+    color: rgb(174, 174, 174);
+    font-size: 0.8rem;
+    position: relative;
+}
+
+.intensivos::before {
+    content: url(./img/cursos.svg);
+    position: absolute;
+    left: -40px;
+    top: -5px;
+}
+
+.intensivosEx {
+    margin: 20px 0px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+}
+
+.intensivosEx p {
+    color: white;
+    font-size: 1rem;
+    line-height: 2.5;
+}
+
+.intensivosH p{
+    color: rgb(174, 174, 174);
+    justify-self: end;
+}
+
+.h-idiomas {
+    position: relative;
+}
+
+.idiomas {
+    margin: 20px 0px;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+
+.h-idiomas::before {
+    content: url(./img/idiomas.svg);
+    position: absolute;
+    left: -40px;
+    top: -5px;
+}
+
+
+.idiomas p {
+    font-size: 1rem;
+    line-height: 2.5;
+    color: white;
+}
+
+.idiomas span {
+    font-size: 1rem;
+    line-height: 2.5;
+    color: rgb(174, 174, 174);
+    display: block;
+}
+
+@media (max-width:650px){
+
+.formação {
+    font-size: 3rem;
+    max-width: 2ch;
+}}
+
+@media (max-width:500px) {
+
+aside {
+    margin-top: 20px;
+    margin-inline: auto;
+    padding: 20px 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+.formação {
+    max-width: auto;
+    font-size: 2rem;
+    word-break: normal;
+    text-align: justify;
+    justify-self: auto;
+}   
+
+.cursos {
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.intensivos::before {
+    display: none;
+}
+
+.intensivos::after {
+    content: url(./img/cursos.svg);
+    position: absolute;
+    right: 0px;
+    top: -5px;
+}
+
+.h-idiomas::before {
+    display: none;
+}
+
+.h-idiomas::after {
+    content: url(./img/idiomas.svg);
+    position: absolute;
+    right: 0px;
+    top: -5px;
+}
+
+.idiomas {
+    grid-template-columns: 1fr 1fr;
+}
+
+}
