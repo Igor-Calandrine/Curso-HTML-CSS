@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários</title>
+</head>
+<body>
+
+<!-- 
+Formulários
+    Os formulários são uma das partes mais importantes do desenvolvimento web, pois permitem que o usuário envie informações para o site. É através deles que fazemos login, criamos contas, pesquisamos no Google, enviamos mensagens e muito mais.
+    
+Tag Form
+    Tudo começa com a tag <form>, ela envolver todos os ampos do formulário, nela temos:
+
+        *action - indica para onde os dados serão enviados
+            Ex: "processo.php", "cadastro.py" ou uma URL
+        
+        *method - define como os dados serão enviados
+            GET - envia os dados pela URL, esse dados são visíveis na URK e por isso normalmente são usados para buscas e testes.
+            POST - envia os dados de forma interna, esses dados NÃO serão visíveis da URL, e por isso devem ser usados para login, cadastro, pagamentos e etc, por motivos de segurança.
+            
+TAG Label
+    A tag <label>, embora muitas vezes esquecida por iniciantes, é usada para ssociar um texto descritivo a um ampo de formulário. Dessa maneira ela é usada para melhorar a acessibilidade e organização do formulário. O susuário poderá clicar no nome para poder ter acesso a área de input, os leitores de tela anunciaram o nome do campo antes de informar o tipo de entrada.
+    
+    Para associar um Label a um Input, o #for no label deve ter o mesmo #id que o input. Agora veremos o que é input.
+        
+TAG Input
+    A tag <input> é um elemento de formulário que permite receber dados do usuário, funciona através de atributos, os quais veremos adiante, para definir o tipo de entrada. Primeiramente vamos nos concentrar no tipo texto. 
+    
+    Temos um atributo chamado #name, ele é muito importante pois irá dar um nome a informação que foi coletada, por isso deve-se ter apenas um nome para cada informação. Nos exemplos abaixo o estudante deve observar na URL que após os dados serem enviado ela aparecerá.
+    
+TAG Button
+    A tag <button> é um elemento usado para criar botões clicáveis dentro de uma página HTML. OS valores mais usados são:
+        
+        *submit - envia os dados de um formulário
+        *reset - redefine os campo do formulário para seus valores iniciais
+        *button- não envia formulários, é usado para scripts
+        
+    Agora veremos abaixo um exemplo para utilizar as tag em conjunto e difereniarmos GET de POST-->
+
+
+<h1>Exemplo 1 - Form, GET e POST</h1>
+
+<style>
+    .ex1-form {
+        box-sizing: content-box;
+        margin-top: 40px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.2rem;
+        display: grid;
+        gap:15px;
+        grid-template-columns: auto 500px;
+        grid-template-rows: 1fr 1fr;
+        justify-content: left;
+        align-items: center;
+    }
+
+    .ex1-label {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.2rem;
+        width: 140px;
+    }
+
+    .ex1-input {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.4rem;
+        font-weight: lighter;
+        display: block;
+        width: 500px;
+        background-color: rgb(221, 221, 221);
+        border: 2px solid rgb(124, 124, 124);
+        border-radius: 8px;
+    }
+
+    .ex1-button {
+        font-size: 1rem; 
+        padding: 10px 15px;
+        background-color: rgb(155, 226, 250);
+        border: 1px solid rgb(121, 121, 121);
+        border-radius: 10px;
+        grid-column: 2/3;
+        justify-self: end;
+    }
+</style>
+
+<form class="ex1-form" action="./" method="get">
+    <label class="ex1-label" for="ex1">Test para GET</label>
+    <input class="ex1-input" type="text" id="ex1" name="teste_get">
+    <button class="ex1-button">ENVIAR</button>
+</form>
+
+<form class="ex1-form" action="./" method="post">
+    <label class="ex1-label" for="ex1-1">Test para POST</label>
+    <input class="ex1-input" type="text" id="ex1-1" name="teste_post">
+    <button class="ex1-button">ENVIAR</button>
+</form>
+
+<!--
+Type de Inputs
+    Vamos conhecer agora os tipos de input mais importante pois são os que constantemente são usados no desenvolvimento web além do #text já exemplificado acima, o qual o susuário pode inserir qualquer tipo de escrita. 
+    
+    *password - adiona caracteres que ocultam o texto, ele é necessário para manter a segurança quando for adicionado senhas em logins, cadastros e cofirmações de identidade.
+
+    *email - cria um campo específico para e-mails, com ele a validação será automática no navegador verificando se existe o @, se o domínio é válido. Ajuda a evitar erros nos dados e ativa teclas especiais em celulares.
+
+    *tel - cria um campo específico para telefones, assim ele não valida automaticamente e ajuda no mobile a abrir o teclado numérico automaticamente no celular.
+
+    *date - cria um campo que abre um calendário para escolher uma data, é importante para evitar erros de digitaçao e formatação quando se insere um data e deixa o formulário mais rápido e intuitivo
+
+    *number - cria um campo que aceita apenas números, importante para impedir a entrada de letras pelo usuário, adiciona setas para alterar os números e permite a validação com min, max e step. Ideal para quantidades, preços, idade.
+
+    *checkbox - cria uma caixa de seleção que permite múltiplas escolhas, essencial para perguntas com mais de uma opção, aceitar termos, selecioanas interesses, pesquisas.
+
+    *radio - cria um botão que da uma escolha única dentro de um grupo, são importantes por garantem apenas uma opção seja marcada. É utilizada para sexo, formas de pagamento, respostas únicas de questionários.
+    -->
+
+<style>
+    .Ex-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 30px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.3rem;
+    }
+
+    form {
+        background-color: rgb(151, 194, 255);
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 15px;
+        justify-content: left;
+        border: 1px solid black;
+        border-radius: 10px;
+        padding: 10px;
+    }
+
+    form label {
+        align-self: center;
+        width: 90px;
+    }
+
+    form input {
+        font-size: 1.5rem;
+        background-color: rgb(178, 251, 221);
+        border-radius: 10px;
+        border: 2px solid rgb(74, 74, 74);
+        justify-self: start;
+        min-width: 400px;
+    }
+
+    form button {
+        padding: 10px 15px;
+        background-color: rgb(73, 225, 255);
+        border: 2px solid rgb(88, 88, 88);
+        border-radius: 8px;
+        grid-column: 2/3;
+        justify-self: center;
+    }
+
+    .Ex-Check, .Ex-Radio {
+        grid-column: 1/2 ; 
+        grid-template-columns: 100px 1fr;
+    }
+
+    .Ex-Check p, .Ex-Radio p {
+        grid-column: 1/3;
+    }
+
+    .Ex-Check input, .Ex-Radio input {
+        min-width: initial;
+        width: 20px;
+    }
+
+    .Ex-Radio {
+        grid-column: 1/2;
+        grid-template-columns: auto 1fr;
+    }
+</style>
+
+
+<h1>Exemplo 2 - Type de Input</h1>
+<div class="Ex-2">
+
+    <form action="*/" method="post">
+        <label for="Ex-password">Password</label>
+        <input type="password" id="Ex-password" name="Ex-pass">
+        <button type="submit">ENVIAR</button>
+    </form>
+
+    <form action="*/" method="post">
+        <label for="Ex-mail">E-mail</label>
+        <input type="email" id="Ex-mail" name="Ex-mail">
+        <button type="submit">ENVIAR</button>
+    </form>
+
+    <form action="*/" method="post">
+        <label for="Ex-tel">Telefone</label>
+        <input type="tel" id="Ex-tel" name="Ex-tel">
+        <button type="submit">ENVIAR</button>
+    </form>
+
+    <form action="*/" method="get">
+        <label for="Ex-date">Data</label>
+        <input type="date" id="Ex-date" name="Ex-date">
+        <button>ENVIAR</button>
+    </form>
+
+    <form action="*/" method="get">
+        <label for="number">Números</label>
+        <input type="number" id="number" min="10" step="5" max="100">
+        <button type="submit">ENVIAR</button>
+    </form>
+
+    <form class="Ex-Check" action="*/" method="get">
+        <p>Opções de  Input - Check</p>
+        <label for="Opç1">Opção 1</label>
+        <input type="checkbox" id="Opç1" name="Ex-check" value="1">
+        <label for="Opç2">Opção 2</label>
+        <input type="checkbox" id="Opç2" name="Ex-check" value="2">
+        <label for="Opç3">Opção 3</label>
+        <input type="checkbox" id="Opç3" name="Ex-check" value="3">
+        <button type="submit">ENVIAR</button>
+        <!-- Observe que eles tem o mesmo nome, mas valores diferentes. -->
+    </form>
+
+    <form class="Ex-Radio" action="*/" method="get">
+        <p>Opções de Input-Radio</p>
+        <label for="Ex-radioE">Esquerda</label>
+        <input type="radio" id="Ex-radioE" name="Ex-radio">
+        <label for="Ex-radioC">Centro</label>
+        <input type="radio" id="Ex-radioC" name="Ex-radio" checked>
+        <label for="Ex-radioD">Direita</label>
+        <input type="radio" id="Ex-radioD" name="Ex-radio">
+        <button type="submit">ENVIAR</button>
+        <!-- Observe que todos devem ter o mesmo nome -->
+    </form>
+</div>
+
+<!-- 
+Atributos mais usados 
+    Existem mais algusn atributos muito usados e que valem a pena explorar:
+    
+    *autocomplete - liga ou desliga o autocompletar do navegador, é bastante comum de ver quando se utlizar qualquer aplicativo
+
+    *placeholder - um texto que o formiulário da como dica de preenchimento
+    
+    *required - define o input como obrigatório, bastante utilizado para loggin de usuários
+    
+    *disable - desabilita o input, bastante utilizado mas como uma condicional associada ao JavaScrip
+    
+    *minlength e maxlexgth - controla a quantidade de caracteres que uma pessoa pode usar no input, bastante importante para ter mais segurança nos dados e evitar que pessoas maliciosas possam flodar um input.
+
+    Vamos ver agora um exemplo para explorar todos os atributos acima    
+    -->
+
+    <style>
+        .Ex-3 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.3rem;
+            margin-top: 20px;
+            background-color: rgb(129, 207, 167);
+            display: block;
+            margin-top: 15px;
+        }
+
+        .question {
+            margin-top: 10px;
+            display: grid;
+            grid-column: 1fr;
+            gap: 3px;
+        }
+
+        .question label {
+            width: auto;
+        }
+
+        .question input {
+            background-color: rgb(209, 248, 251);
+        }
+
+        .check {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            
+        }
+
+        .check p {
+            grid-column: 1/3;
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+
+        .check input {
+            min-width: initial;
+            width: 15px;
+            justify-self: left;
+        }
+
+        .question textarea {
+            font-size: 1.6rem;
+            margin: 20px;
+            width: 60ch;
+        }
+    </style>
+
+
+    <h1>Exemplo 3 - Prática de atributos adicionais</h1>
+    <form class="Ex-3" action="*/" method="post">
+        <div class="question">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" minlength="5" maxlength="10" autocomplete="on" placeholder="Nome Completo">  
+        </div>
+
+        <div class="question">
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" nome="senha" minlength="4" maxlength="10" autocomplete="off" placeholder="Min 4 - Max 10">
+        </div>
+
+        <div class="question">
+            <label for="senha-r">Repita a Senha:</label>
+            <input type="password" id="senha-r" nome="senha-r" minlength="4" maxlength="10" autocomplete="off" placeholder="Min 4 - Max 10">
+        </div>
+
+        <div class="question">
+            <label for="tel">Telefone:</label>
+            <input type="tel" id="tel" name="tel" placeholder="(XX) XXXXX-XXXX" disabled>
+        </div>
+
+        <div class="check">
+            <p>Aceita as condições</p>
+            <label for="aceitarS">Sim</label>
+            <input type="radio" id="aceitarS" name="aceitar">
+            <label for="aceitarN">Não</label>
+            <input type="radio" id="aceitarN" name="aceitar">
+        </div>
+
+        <div class="question">
+            <label for="text-A">Digite suas considerações</label>
+            <textarea id="text-A" name="textA" minlength="10" maxlength="20" placeholder="Digite aqui o texto - min 10 e max 20 caracteres" rows="10"></textarea>
+        </div>
+
+        <button type="reset">Reiniciar</button>
+    </form>
+
+
+
+
+
+        
+
+    
+</body>
+</html>
