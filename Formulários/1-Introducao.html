@@ -18,8 +18,10 @@ Tag Form
             Ex: "processo.php", "cadastro.py" ou uma URL
         
         *method - define como os dados serão enviados
-            GET - envia os dados pela URL, esse dados são visíveis na URK e por isso normalmente são usados para buscas e testes.
-            POST - envia os dados de forma interna, esses dados NÃO serão visíveis da URL, e por isso devem ser usados para login, cadastro, pagamentos e etc, por motivos de segurança.
+            GET - envia os dados pela URL, esse dados são visíveis na URL e por isso normalmente são usados para buscas e testes.
+            ! Nunca se deve usar GET para o envio de dados privados
+
+            POST - envia os dados de forma interna, esses dados não serão visíveis da URL, e por isso devem ser usados para login, cadastro, pagamentos e etc, por motivos de segurança.
             
 TAG Label
     A tag <label>, embora muitas vezes esquecida por iniciantes, é usada para ssociar um texto descritivo a um ampo de formulário. Dessa maneira ela é usada para melhorar a acessibilidade e organização do formulário. O susuário poderá clicar no nome para poder ter acesso a área de input, os leitores de tela anunciaram o nome do campo antes de informar o tipo de entrada.
@@ -36,7 +38,7 @@ TAG Button
         
         *submit - envia os dados de um formulário
         *reset - redefine os campo do formulário para seus valores iniciais
-        *button- não envia formulários, é usado para scripts
+        *button - não envia formulários, é usado para scripts
         
     Agora veremos abaixo um exemplo para utilizar as tag em conjunto e difereniarmos GET de POST-->
 
@@ -49,12 +51,15 @@ TAG Button
         margin-top: 40px;
         font-family: Arial, Helvetica, sans-serif;
         font-size: 1.2rem;
+        padding: 6px;
         display: grid;
         gap:15px;
         grid-template-columns: auto 500px;
         grid-template-rows: 1fr 1fr;
         justify-content: left;
         align-items: center;
+        background-color: rgb(253, 222, 181);
+        border-radius: 10px;
     }
 
     .ex1-label {
@@ -101,19 +106,26 @@ TAG Button
 Type de Inputs
     Vamos conhecer agora os tipos de input mais importante pois são os que constantemente são usados no desenvolvimento web além do #text já exemplificado acima, o qual o susuário pode inserir qualquer tipo de escrita. 
     
-    *password - adiona caracteres que ocultam o texto, ele é necessário para manter a segurança quando for adicionado senhas em logins, cadastros e cofirmações de identidade.
+    *password - 
+    adiona caracteres que ocultam o texto, ele é necessário para manter a segurança quando for adicionado senhas em logins, cadastros e cofirmações de identidade.
 
-    *email - cria um campo específico para e-mails, com ele a validação será automática no navegador verificando se existe o @, se o domínio é válido. Ajuda a evitar erros nos dados e ativa teclas especiais em celulares.
+    *email - 
+    cria um campo específico para e-mails, com ele a validação será automática no navegador verificando se existe o @, se o domínio é válido. Ajuda a evitar erros nos dados e ativa teclas especiais em celulares.
 
-    *tel - cria um campo específico para telefones, assim ele não valida automaticamente e ajuda no mobile a abrir o teclado numérico automaticamente no celular.
+    *tel - 
+    cria um campo específico para telefones, assim ele não valida automaticamente e ajuda no mobile a abrir o teclado numérico automaticamente no celular.
 
-    *date - cria um campo que abre um calendário para escolher uma data, é importante para evitar erros de digitaçao e formatação quando se insere um data e deixa o formulário mais rápido e intuitivo
+    *date - 
+    cria um campo que abre um calendário para escolher uma data, é importante para evitar erros de digitaçao e formatação quando se insere um data e deixa o formulário mais rápido e intuitivo
 
-    *number - cria um campo que aceita apenas números, importante para impedir a entrada de letras pelo usuário, adiciona setas para alterar os números e permite a validação com min, max e step. Ideal para quantidades, preços, idade.
+    *number - 
+    cria um campo que aceita apenas números, importante para impedir a entrada de letras pelo usuário, adiciona setas para alterar os números e permite a validação com min, max e step. Ideal para quantidades, preços, idade.
 
-    *checkbox - cria uma caixa de seleção que permite múltiplas escolhas, essencial para perguntas com mais de uma opção, aceitar termos, selecioanas interesses, pesquisas.
+    *checkbox - 
+    cria uma caixa de seleção que permite múltiplas escolhas, essencial para perguntas com mais de uma opção, aceitar termos, selecioanas interesses, pesquisas.
 
-    *radio - cria um botão que da uma escolha única dentro de um grupo, são importantes por garantem apenas uma opção seja marcada. É utilizada para sexo, formas de pagamento, respostas únicas de questionários.
+    *radio - 
+    cria um botão que da uma escolha única dentro de um grupo, são importantes por garantem apenas uma opção seja marcada. É utilizada para sexo, formas de pagamento, respostas únicas de questionários.
     -->
 
 <style>
@@ -126,7 +138,7 @@ Type de Inputs
         font-size: 1.3rem;
     }
 
-    form {
+    .Ex-2 form {
         background-color: rgb(151, 194, 255);
         display: grid;
         grid-template-columns: auto 1fr;
@@ -137,18 +149,17 @@ Type de Inputs
         padding: 10px;
     }
 
-    form label {
+    .Ex-2 form label {
         align-self: center;
-        width: 90px;
     }
 
-    form input {
+    .Ex-2 form input {
         font-size: 1.5rem;
         background-color: rgb(178, 251, 221);
         border-radius: 10px;
         border: 2px solid rgb(74, 74, 74);
         justify-self: start;
-        min-width: 400px;
+        
     }
 
     form button {
@@ -156,8 +167,8 @@ Type de Inputs
         background-color: rgb(73, 225, 255);
         border: 2px solid rgb(88, 88, 88);
         border-radius: 8px;
-        grid-column: 2/3;
-        justify-self: center;
+        grid-column: 1/3;
+        justify-self: start;
     }
 
     .Ex-Check, .Ex-Radio {
@@ -166,6 +177,7 @@ Type de Inputs
     }
 
     .Ex-Check p, .Ex-Radio p {
+        margin: 0;
         grid-column: 1/3;
     }
 
@@ -223,7 +235,7 @@ Type de Inputs
         <label for="Opç3">Opção 3</label>
         <input type="checkbox" id="Opç3" name="Ex-check" value="3">
         <button type="submit">ENVIAR</button>
-        <!-- Observe que eles tem o mesmo nome, mas valores diferentes. -->
+        <!--? Observe que eles tem o mesmo nome, mas valores diferentes. -->
     </form>
 
     <form class="Ex-Radio" action="*/" method="get">
@@ -235,7 +247,7 @@ Type de Inputs
         <label for="Ex-radioD">Direita</label>
         <input type="radio" id="Ex-radioD" name="Ex-radio">
         <button type="submit">ENVIAR</button>
-        <!-- Observe que todos devem ter o mesmo nome -->
+        <!--? Observe que todos devem ter o mesmo #name -->
     </form>
 </div>
 
@@ -243,15 +255,20 @@ Type de Inputs
 Atributos mais usados 
     Existem mais algusn atributos muito usados e que valem a pena explorar:
     
-    *autocomplete - liga ou desliga o autocompletar do navegador, é bastante comum de ver quando se utlizar qualquer aplicativo
+    *autocomplete - 
+    liga ou desliga o autocompletar do navegador, é bastante comum de ver quando se utlizar qualquer aplicativo
 
-    *placeholder - um texto que o formiulário da como dica de preenchimento
+    *placeholder - 
+    um texto que o formiulário da como dica de preenchimento
     
-    *required - define o input como obrigatório, bastante utilizado para loggin de usuários
+    *required - 
+    define o input como obrigatório, bastante utilizado para loggin de usuários
     
-    *disable - desabilita o input, bastante utilizado mas como uma condicional associada ao JavaScrip
+    *disable - 
+    desabilita o input, bastante utilizado mas como uma condicional associada ao JavaScrip
     
-    *minlength e maxlexgth - controla a quantidade de caracteres que uma pessoa pode usar no input, bastante importante para ter mais segurança nos dados e evitar que pessoas maliciosas possam flodar um input.
+    *minlength e maxlexgth - 
+    controla a quantidade de caracteres que uma pessoa pode usar no input, bastante importante para ter mais segurança nos dados e evitar que pessoas maliciosas possam flodar um input.
 
     Vamos ver agora um exemplo para explorar todos os atributos acima    
     -->
@@ -261,16 +278,17 @@ Atributos mais usados
             font-family: Arial, Helvetica, sans-serif;
             font-size: 1.3rem;
             margin-top: 20px;
+            width: 95%;
+            padding: 15px;
+            border-radius: 10px;
             background-color: rgb(129, 207, 167);
             display: block;
-            margin-top: 15px;
         }
 
         .question {
-            margin-top: 10px;
             display: grid;
             grid-column: 1fr;
-            gap: 3px;
+            gap: 1px;
         }
 
         .question label {
@@ -279,17 +297,19 @@ Atributos mais usados
 
         .question input {
             background-color: rgb(209, 248, 251);
+            font-size: 1.3rem;
+            border: 2px solid rgb(67, 67, 67);
+            border-radius: 5px;
         }
 
         .check {
             display: grid;
             grid-template-columns: auto 1fr;
-            
         }
 
         .check p {
             grid-column: 1/3;
-            margin-top: 10px;
+            margin-top: 20px;
             margin-bottom: 5px;
         }
 
@@ -299,9 +319,14 @@ Atributos mais usados
             justify-self: left;
         }
 
+        .question label {
+            margin: 15px 0px;
+        }
+
         .question textarea {
             font-size: 1.6rem;
-            margin: 20px;
+            margin: 10px 0px;
+            border-radius: 4px;
             width: 60ch;
         }
     </style>
@@ -346,7 +371,12 @@ Atributos mais usados
     </form>
 
 
-
+<!--  -->
+<!-- ? -->
+ <!-- ! -->
+<!-- * -->
+<!-- & -->
+  
 
 
         
