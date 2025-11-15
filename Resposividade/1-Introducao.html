@@ -12,16 +12,16 @@
 Mediaqueries
     Um layout responsivo se adapta a diferentes tipo/tamanhos de tela e as preferÊncias do usuário. Para isso é necessário que se use:
     
-    Unidade relativas como %, vw, fr 
+    *Unidade relativas como %, vw, fr 
     
-    Media Queries, um código que será atividade com o tamanho da tela.
+    *Media Queries, um código que será atividade com o tamanho da tela.
     
-    Flexbox e Grid, para adaptar o conteúdo com o tamanho da tela
+    *Flexbox e Grid, para adaptar o conteúdo com o tamanho da tela
     
-    Tipo de cursos, deve ser alterado considerando a operação do site apenas com o dedo
+    *Tipo de cursor, deve ser alterado considerando a operação do site apenas com o dedo
     
 Meta Viewport
-    A meta tag viewprt é essencial para garantir com que o HTML/CSS lide de forma correta com tela de alta densidade, ela normaliza o PX do CSS.
+    A meta tag viewport é essencial para garantir com que o HTML/CSS lide de forma correta com tela de alta densidade, ela normaliza o PX do CSS.
     
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -29,14 +29,16 @@ Meta Viewport
     A @media gera um loco de código que só será ativado caso a condição entre parênteses seja verdadeira.
 
 Ex: 
-    @media (max-width: 500px) - Até o máximo de 500px, ou seja, menores que 500px
+*   @media (max-width: 500px)
+    Até o máximo de 500px, ou seja, menores que 500px
 
-    @media (min-width: 600px) - Até o mínimo de 600px, ou seja, maiores que 600px
+*   @media (min-width: 600px)
+    Até o mínimo de 600px, ou seja, maiores que 600px
 
-    @media (min-width: 800px) and (max-width: 900px) - Entre 800px e 900px
-    -->
+*   @media (min-width: 800px) and (max-width: 900px)
+    Entre 800px e 900px-->
+
     <h1 class="exemplo">Exemplo - Media Querie</h1>
-
     <style>
         .ex1 {width: 400px;height: 400px;background-color: aqua;margin: auto;}
         
@@ -74,8 +76,13 @@ Repeat(auto-fit)
 Object-fit
     As vezes pode ser interessante cortar uma imagem quando se aplica respondividade ou não deixar que essa imagem estique e fique com um design alterado. Para isso pode-se usar:
     
-    object-fit - funciona como background-size. contém os valores como cover, contai e fill
-    object-position - indicando como ele deve ser cortado, top left, top center
+*   object-fit
+    funciona como background-size, contém os valores como cover, contain e fill
+
+*   object-position
+    indicando como ele deve ser cortado, top left, top center
+
+É necessário aplicar "height: 100%" a imagem para também ocupar toda a altura quando a caixa se expande.
     
 Max-width
     É muito importante conhecer o max-width pois com ele você irá controlar o máximo da tamanho que um objeto irá ter na tela, controlando assim o espaço de imagens e textos.
@@ -103,10 +110,9 @@ Max-width
             display: block;
             width: 100%;
             height: 100%;
+            /* Experiente retirar comentar a linha acima */
             object-fit: cover;
             object-position: top right;
-            /* Com height a imagem passou também a ocupar toda a altura quando a caixa de texto expande.
-            Com com object-fit não deixamos a imagem esticar */
         }
         .ex32 {
             background-color: rgba(127, 255, 212, 0.38);
@@ -114,11 +120,10 @@ Max-width
         }
 
         .ex32 p {
-            max-width: 40ch;
-            /* Experimente alterar o valor para ver o  <p> do texto se alongando mas a caixa da diva ainda se mantendo com o mesmo tamanho. */
+            max-width: 50ch;
+            /* Experimente alterar o valor para ver o texto se alongando mas na caixa mas a div ainda se mantendo com a mesma largura. */
         }
     </style>
-
 
     <div class="ex3">
         <div class="ex31">
