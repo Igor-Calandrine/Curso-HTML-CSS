@@ -40,11 +40,16 @@ Ex:
 
     <h1 class="exemplo">Exemplo - Media Querie</h1>
     <style>
-        .ex1 {width: 400px;height: 400px;background-color: aqua;margin: auto;}
+        .ex1 {
+            width: 400px;
+            height: 400px;
+            background-color: aqua;
+            margin: auto;}
         
         @media (max-width: 600px) {
-            .ex1 {width: 200px; height: 200px}
-        }
+            .ex1 {
+                width: 200px; 
+                height: 200px;}}
     </style>
 
     <div class="ex1">
@@ -56,10 +61,15 @@ Repeat(auto-fit)
     O repeat com auto-fit irá gerar o total de colunas que forem necessárias para preencher a área. Para visualizar melhor é necessário que altere o tamanho da tela-->
 
     <h1 class="exemplo">Exemplo - repeat(auto-fit)</h1>
-
     <style>
-        .ex2{display: grid; grid-template-columns: repeat(auto-fit, 200px);gap: 2px;}
-        .ex21 {width: 200px; height: 200px; background-color: burlywood;}
+        .ex2{
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, 200px);
+            gap: 2px;}
+        .ex21 {
+            width: 200px; 
+            height: 200px; 
+            background-color: burlywood;}
     </style>
 
     <div class="ex2">
