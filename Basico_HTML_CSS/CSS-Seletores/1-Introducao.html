@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Seletores</title>
+    
+</head>
+<body>
+<!-- 
+    Principais Seletores do CSS
+    Os seletores do CSS são usados para identificar quais elementos HTML receberão estilos. Entender bem esses seletores é essencial para criar páginas organizadas, escaláveis e de fácil manutenção. A seguir, estão os seletores mais importantes e usados no dia a dia do desenvolvimento web.
+
+ 
+    *Tipo Universal
+    Aplica estilos a todos os elementos, tem o terceiro nível de prioridade (0, 0, 1), usado principalmente como primeiro elemento de um estilo para resetar valores padrões, os que virão em seguida passarão por cima de seus valores. É chamado através do asterisco (*).-->
+
+    <h1>Exemplo Seletor - Tipo Universal</h1>
+    <style>
+        * span {
+            color: brown;
+            display: block;}
+    </style>
+
+    <span>Um parágrafo</span>
+    <span>Outro parágrafo</span>
+    <span>Mais parágrafo</span>
+    
+<!--
+    *Tipo Tag
+    Seleciona todos os elementos de uma Tag, tem o terceiro nível de prioridade (0, 0, 1)-->
+
+    <h1>Exemplo Seletor - Tipo Tag</h1>
+    <style>
+        p {
+            color: rgb(8, 133, 133);
+            font-size: 1.3rem;
+        }
+    </style>
+
+    <p>Um parágrafo</p>
+    <p>Outro parágrafo</p>
+    <p>Mais parágrafo</p>
+
+<!-- 
+    *Tipo Classe
+    Aplica estilo a elementos que possuem um atributo class definido, tem o segundo nível de prioridade (0, 1, 0). É chamado através do ponto (.) antes do nome definido.-->
+
+    <h1>Exemplo Seletor - Tipo Classe</h1>
+    <style>
+        .classe1 {
+            color: blue;
+        }
+        .classe2 {
+            color: blueviolet;
+        }
+    </style>
+
+    <p class="classe1">Um parágrafo com classe 1</p>
+    <p class="classe2">Outro parágrafo com classe 2</p>
+    <p class="classe1">Mais parágrafo com classe 1</p>
+
+<!--
+    *Tipo Id 
+    Aplica estilo a elementos que possuem um atributo id definido, tem o primeiro nível de prioridade (1, 0, 0). É chamado através do jogo-da-velha (#) antes do nome definido. 
+    No exemplo abaixo será demonstrado também uma aplicação de prioridade do Id em cima da Classe.-->
+    
+    <h1>Exemplo Seletor - Tipo Id</h1>
+    <style>
+        #id1 {
+            color: aqua;
+        }
+    </style>
+    
+    <p class="classe1" id="id1">Um parágrafo com classe 1</p>
+    <p class="classe2">Outro parágrafo com classe 2</p>
+    <p class="classe1">Mais parágrafo com classe 1</p>
+
+<!-- 
+    *Tipo Descendente
+    Seleciona todos os elementos dentro de outro elemento, observe no seu nível de prioridade que quanto mais elementos são colocados nos seletores, maior será seu nível de prioridade.
+    ? Apesar de <p> estar dentro da section, ele esta dentro de .descedente_1, motivo pelo qual o estilo é aplicado, isso muitas vezes pode gerar um problema, que pode ser solucionado com o tipo de seletor adiante.-->
+
+    <h1>Exemplo Seletor - Tipo Descendente</h1>
+
+    <style>
+        .descedente_1 p {
+            color: rgb(121, 73, 15);
+        }
+    </style>
+
+        <p>Elemento p fora da ARTICLE</p>
+    <article class="descedente_1">
+        <p>Elemento 1 p dento da ARTICLE</p>
+        <p>Elemento 2 p dento da ARTICLE</p>
+        <h4>Elemento 1 h4 dentro da ARTICLE</h4>
+        <section>
+            <p>Elemento dentro de uma SECTION que esta dento da ARTICLE</p>
+            <p>Elemento dentro de uma SECTION que esta dento da ARTICLE</p>
+        </section>
+    </article>
+
+<!-- 
+    *Tipo Descendente Filho Direto
+    Seleciona todos os elementos dentro de outro elemento que apenas são filhos diretos, ela é chamada através do sinal de maior (>) -->
+
+    <h1>Exemplo Seletor - Tipo Descendente Filho Direto</h1>
+
+    <style>
+        .descedente_direto > p {
+            color: rgb(121, 73, 15);
+        }
+    </style>
+
+        <p>Elemento p fora da ARTICLE</p>
+    <article class="descedente_direto">
+        <p>Elemento 1 p dento da ARTICLE</p>
+        <p>Elemento 2 p dento da ARTICLE</p>
+        <h4>Elemento 1 h4 dentro da ARTICLE</h4>
+        <section>
+            <p>Elemento dentro de uma SECTION que esta dento da ARTICLE</p>
+            <p>Elemento dentro de uma SECTION que esta dento da ARTICLE</p>
+        </section>
+    </article>
+
+<!-- 
+    *Tipo Sucessivo
+    Seleciona o elemento irmão sucessivo ou outro.É chamado através do sinal de mais (+).
+    ? É normalmente utilizado para resolver um problema em que não queria selecionao o primeiro elemento ou para que o último elemento não recebe uma estilo bottom. Vejamos no exemplo abaixo que se for retirado (+ p) do seletor, uma margem desnecessária irá aparecer no top-->
+
+    <h1>Exemplo Seletor - Tipo Descendente Sucessivo</h1>
+    <style>
+        #sucessivo {
+            background-color: antiquewhite;
+        }
+        #sucessivo  p + p {
+            margin-top: 50px;
+        }
+    </style>
+
+    <section class="sucessivo" id="sucessivo">
+        <p>Um parágrafo com</p>
+        <p>Outro parágrafo</p>
+        <p>Mais parágrafo</p>
+    </section>
+
+<!--
+    *Tipo Important
+    Com o valor !important na frente do valor da propriedade, esta passa a ser mais relevante do que qualquer seletor existente. A não ser que exista duas propriedades iguais em sletores diferentes com o !important.
+    ?Cuidado com o uso, pois pode causar uma grande desorganização no seu código. No exemplo abaixo utilizei a classe como seletor para reduzir sua priorirdade e vou colocar !important para passar por cima. 
+     -->
+
+    <h1>Exemplo Seletor - Tipo Important</h1>
+    <style>
+        #important {
+            background-color: rgb(154, 230, 249);
+        }
+        .important {
+            background-color: rgb(249, 204, 247) !important;
+        }
+    </style>
+
+    <section class="important" id="important">
+        <p>Um parágrafo com</p>
+        <p>Outro parágrafo</p>
+        <p>Mais parágrafo</p>
+    </section>
+
+
+
+
+
+    
+</body>
+</html>
