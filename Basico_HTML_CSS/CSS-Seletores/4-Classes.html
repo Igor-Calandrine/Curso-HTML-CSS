@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Seletores e Classes</title>
+</head>
+<body>
+<!-- 
+Seletores e Classes
+    Os seletores de classe são um dos recursos mais utilizados no CSS para estilizar elementos HTML de forma organizada, reutilizável, principalmente porque é assim que surgem frameworks para trabalhar de forma mais ágil. Eles permitem aplicar estilos a qualquer elemento que possua um atributo class.
+    
+    Agora nós faremos o contrário do que já estamos acostumados a fazer, primeiramente vamos criar estilos no CSS para depois serem aplicados nas Tags do HTML dento do atributo class. Podemos aplicar quantos estilos quisermos no atributo, e nesse exemplo apliamos até dois para demonstrar
+
+    Dessa maneira cria-se frameworks em que já se tem uma tabela de classes todas prontas para serem aplicadas, temos como exemplo o BootStrap e o Tailwind
+
+    Um dos problemas de se trabalhar com frameworks é que os nomes dado a classes deverão ser estudados e os sites criados podem ficar muito parecidos devido a padrnização das classes.
+    
+    .-->
+
+    <h1>Exemplo Seletores e Classes </h1>
+
+    <style>
+        .fonta-g {
+            font-size: 2.5rem;
+            background-color: aquamarine;
+        }
+
+        .fonte-m {
+            font-size: 1.5rem;
+            background-color: beige;
+        }
+
+        .div-flex-gap20 {
+            display: flex;
+            gap: 20px;
+        }
+
+        .div-flex-gap50{
+            gap: 50px;
+        }
+    </style>
+
+    <div class="div-flex-gap20">
+        <div class="div-flex-gap50 fonte-m">
+            <h2>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis dicta nesciunt sed quisquam delectus sunt veritatis porro, praesentium a mollitia, similique, consequatur doloremque provident eos laboriosam eum ducimus pariatur ad!</h2>
+            <h2>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam expedita cumque earum. Enim, impedit ducimus aliquid voluptatum quam atque vel nobis doloremque provident. Atque soluta, labore debitis esse hic neque.</h2>
+        </div>
+        <div class="div-flex-gap50 fonta-g">
+            <h2>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis dicta nesciunt sed quisquam delectus sunt veritatis porro, praesentium a mollitia, similique, consequatur doloremque provident eos laboriosam eum ducimus pariatur ad!</h2>
+            <h2>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam expedita cumque earum. Enim, impedit ducimus aliquid voluptatum quam atque vel nobis doloremque provident. Atque soluta, labore debitis esse hic neque.</h2>
+        </div>
+    </div>
+    
+</body>
+</html>
