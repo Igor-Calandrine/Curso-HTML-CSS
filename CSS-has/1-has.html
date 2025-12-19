@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS has:</title>
+</head>
+<body>
+
+<!--
+Pseudo-classe :has()
+    A pseudo-classe #:has() é uma das adições mais poderosas ao CSS moderno, ela permite selecionar um elemento com base no que ele contém ou no estado de seus descendentes.
+
+    
+    *   Selecione este elemento SE eles tiver algo lá dentro (ou ao lado) que atenda a uma condição 
+    
+    *   Ex:     div:has(p) {
+        *              border: 2px solid red
+        *          }
+        
+        No exemplo acima temos uma div que irá aplicar o determinado estilo a uma div que tem uma tag <p>.
+        
+        Caso o estudante já tenho conhecimentos de JavaScript, é fácil de observar que para isso era necessário escrever um script para dar essa dinâmica ao seletor, agora com CSS puro, é possível deixar o código mais limpo e expressivo. Vamos ver agora o uso mais famoso, quando um botão recebe checked e após isso algo poderá acontecer.
+        
+        Para funcionar de forma apropriada selecione o elemento pai e aplique #has() em seu filho, utilize um input do tipo que recebe checked para dar um retorno no elemento escolhido. Observe o exemplo abaixo que foi criado 2 #div que poderão desaparecer de acordo com a escolho do usuário.
+        
+        !É muito importante que se tenha um elemento pai para o has() ter um melhor funcionamento, observe que sempre foi criado um elemento pai com o nome de #.card para cada uma das opções do has()
+-->
+
+    <h2>Exemplo 1 - :has()</h2>
+
+    <style>
+        .container-pai {
+            display: flex;
+            gap: 20px;
+        }
+        .container1 {
+            display: block;
+            width: 150px;
+            height: 150px;
+            background-color: aqua;
+        }
+
+        .card:has(input:checked) .container1 {
+            display: none;
+        }
+    </style>
+
+    <div class="container-pai">
+        <div class="card">
+            <label for="opcao11">Opção 1</label>
+            <input type="checkbox" name="opcao1" id="opcao11">
+            <div class="container1"></div>
+        </div>
+        <div class="card">
+            <label for="opcao12">Opção 2</label>
+            <input class="input" type="checkbox" name="opcao2" id="opcao12">
+            <div class="container1"></div>
+        </div>
+    </div>
+
+    <!-- Vamos aplicar agora o exemplo para um input do tipo radio -->
+
+    <h2>Exemplo 2 - :has()</h2>
+
+    <style>
+        .container2 {
+            display: block;
+            width: 150px;
+            height: 150px;
+            background-color: aquamarine;
+            transition: 1s;
+        }
+
+        .card:has(input:checked) .container2 {
+            background-color: rgba(127, 255, 212, 0);
+        }
+    </style>
+
+    <div class="container-pai">
+        <div class="card">
+            <label for="opcao3">Opção Radio 1</label>
+            <input type="radio" name="opcao21" id="opcao21">
+            <div class="container2"></div>
+        </div>
+        <div class="card">
+            <label for="opcao4">Opção Radio 2</label>
+            <input type="radio" name="opcao21" id="opcao22">
+            <div class="container2"></div>
+        </div>
+    </div>
+
+</body>
+</html>
+
